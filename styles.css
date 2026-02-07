@@ -675,14 +675,82 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: rgba(124, 58, 237, 0.5);
+    background-color: transparent;
+    border: 2px solid rgba(124, 58, 237, 0.8);
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    mix-blend-mode: difference;
 }
-* {
+
+/* Loading Animation */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeOut 0.5s ease 2.5s forwards;
+}
+
+.loader-shape {
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgba(124, 58, 237, 0.3);
+    border-top-color: #7c3aed;
+    border-radius: 50%;
+    animation: spin 1s linear infinite, morphShape 3s ease-in-out;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes morphShape {
+    0%, 100% { border-radius: 50%; }
+    25% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    75% { border-radius: 30% 70% 70% 30% / 70% 30% 30% 70%; }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+    .card-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr !important;
+        padding: 1rem;
+    }
+    .card-large, .card-medium, .card-small {
+        grid-column: span 1 !important;
+    }
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    .nav {
+        padding: 1rem !important;
+    }
+}* {
     cursor: none;
 }
 
