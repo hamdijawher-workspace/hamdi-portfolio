@@ -667,3 +667,25 @@ body {
 .card:nth-child(4) { animation-delay: 0.4s; }
 .card:nth-child(5) { animation-delay: 0.5s; }
 .card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Custom Circle Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(124, 58, 237, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+* {
+    cursor: none;
+}
+
+a, button, .card {
+    cursor: none;
+}
