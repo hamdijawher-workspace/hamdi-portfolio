@@ -127,7 +127,7 @@ document.querySelectorAll('.card').forEach(card => {
 console.log('%c👨‍💻 Portfolio by Hamdi Jawher', 'color: #6366f1; font-size: 16px; font-weight: bold;');
 console.log('%cInterested in the code? Check out the GitHub repo!', 'color: #8b5cf6; font-size: 12px;');
 
-// Custom Circle Cursor
+// Morphing Circle Cursor
 const cursor = document.createElement('div');
 cursor.classList.add('custom-cursor');
 document.body.appendChild(cursor);
@@ -136,6 +136,7 @@ let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
 let cursorY = 0;
+let currentCard = null;
 
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -143,23 +144,56 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.1;
-    cursorY += (mouseY - cursorY) * 0.1;
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
+    const ease = 0.15;
+    cursorX += (mouseX - cursorX) * ease;
+    cursorY += (mouseY - cursorY) * ease;
+    
+    if (currentCard) {
+        // Morph to card shape
+        const rect = currentCard.getBoundingClientRect();
+        cursor.style.width = rect.width + 'px';
+        cursor.style.height = rect.height + 'px';
+        cursor.style.left = rect.left + 'px';
+        cursor.style.top = rect.top + 'px';
+        cursor.style.borderRadius = getComputedStyle(currentCard).borderRadius;
+    } else {
+        // Default circle
+        cursor.style.width = '20px';
+        cursor.style.height = '20px';
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursor.style.borderRadius = '50%';
+    }
+    
     requestAnimationFrame(animateCursor);
 }
 animateCursor();
 
-// Cursor interaction with cards
-const interactiveElements = document.querySelectorAll('.card, a, button');
+// Card hover detection
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        currentCard = card;
+        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.2)';
+        cursor.style.border = '2px solid rgba(124, 58, 237, 0.6)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        currentCard = null;
+        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.5)';
+        cursor.style.border = 'none';
+    });
+});
+
+// Button/Link hover
+const interactiveElements = document.querySelectorAll('a, button, .tag');
 interactiveElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.3)';
+        if (!currentCard) {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        }
     });
     element.addEventListener('mouseleave', () => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.5)';
     });
 });
