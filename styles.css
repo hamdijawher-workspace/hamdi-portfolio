@@ -707,6 +707,26 @@ body {
     animation: spin 1s linear infinite, morphShape 3s ease-in-out;
 }
 
+.loader-text {
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    animation: fadeInText 1s ease 0.5s backwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
