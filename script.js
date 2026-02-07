@@ -1,25 +1,3 @@
-// Custom Cursor
-const cursor = document.querySelector('.custom-cursor');
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// Add hover class for clickable elements
-const clickableElements = document.querySelectorAll('a, button, .card, input, textarea');
-
-clickableElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-    });
-    
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-    });
-});
-}
-
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
