@@ -1,28 +1,23 @@
-// Mobile Navigation Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
 
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
 
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
+// Add hover class for clickable elements
+const clickableElements = document.querySelectorAll('a, button, .card, input, textarea');
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
+clickableElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
     });
+    
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+    });
+});
 }
 
 // Smooth Scroll for Navigation Links
