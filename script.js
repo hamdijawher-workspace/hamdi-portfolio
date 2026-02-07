@@ -174,26 +174,10 @@ const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
         currentCard = card;
-        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.2)';
-        cursor.style.border = '2px solid rgba(124, 58, 237, 0.6)';
+        border = '3px solid rgba(124, 58, 237, 1)'
+
     });
     
     card.addEventListener('mouseleave', () => {
         currentCard = null;
-        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.5)';
-        cursor.style.border = 'none';
-    });
-});
-
-// Button/Link hover
-const interactiveElements = document.querySelectorAll('a, button, .tag');
-interactiveElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        if (!currentCard) {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        }
-    });
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    });
-});
+                cursor.style.border = '2px solid rgba(124, 58, 237, 0.8)';
