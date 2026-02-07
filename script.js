@@ -126,3 +126,40 @@ document.querySelectorAll('.card').forEach(card => {
 // Console message
 console.log('%c👨‍💻 Portfolio by Hamdi Jawher', 'color: #6366f1; font-size: 16px; font-weight: bold;');
 console.log('%cInterested in the code? Check out the GitHub repo!', 'color: #8b5cf6; font-size: 12px;');
+
+// Custom Circle Cursor
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Cursor interaction with cards
+const interactiveElements = document.querySelectorAll('.card, a, button');
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.3)';
+    });
+    element.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.backgroundColor = 'rgba(124, 58, 237, 0.5)';
+    });
+});
