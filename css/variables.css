@@ -1,0 +1,202 @@
+/*
+# Reference Specification
+
+Reference crawled on 2026-03-27:
+- https://www.harrygeorge.design/
+- https://www.harrygeorge.design/work
+- https://www.harrygeorge.design/approach
+- https://www.harrygeorge.design/contact
+- https://www.harrygeorge.design/work/raidiam
+- https://www.harrygeorge.design/work/friendmts
+
+Extracted and replicated design patterns:
+- Primary font: "PP Neue Montreal" (single-family system, medium-weight dominant)
+- Palette:
+  - Base background: #151615
+  - Primary text: #f1f1f1
+  - Intermediate tones inferred from the site's mono scale:
+    - ~#1c1d1c, #212220, #2a2b2a, #3c3d3b, #6a6b67, #a7a8a4
+- Layout:
+  - 12-column fluid grid
+  - Viewport scale: 20rem to 100rem
+  - Horizontal margin/gutter: clamp(1.25rem, 1.5vw, 1.5rem)
+  - Main radius family: 0.5rem / 0.25rem / 0.1875rem
+- Typography:
+  - Display: clamp(2rem, 5vw, 3rem)
+  - H1: clamp(1.75rem, 4vw, 2.5rem)
+  - H2: clamp(1.75rem, 2.5vw, 2rem)
+  - H3: clamp(1.25rem, 2vw, 1.625rem)
+  - Body: clamp(0.9375rem, 1vw, 1rem)
+  - Tight negative tracking across headings
+- Motion:
+  - Preloader with logo fill + slide out
+  - Hero fade/blur stagger
+  - Card rise + blur reveal
+  - Scroll-triggered divider growth
+  - Nav blur/background shift after scroll
+  - Light page-out transition on internal links
+
+This portfolio intentionally mirrors that structural language while replacing all identity,
+copy, metadata, and project content with HAMDI JAWHER's material.
+
+2026-03-28 refresh:
+- Shifted to a bright editorial palette inspired by curated.supply's clean, airy product framing
+- Lighter surfaces, softer shadows, pill-like controls, and more expressive homepage sections
+- Kept the portfolio content, structure, and case-study hierarchy centred on HAMDI JAWHER
+*/
+
+:root {
+  --site-viewport-min: 20rem;
+  --site-viewport-max: 100rem;
+  --site-margin: clamp(1.25rem, 1.2vw + 1rem, 1.5rem);
+  --site-gutter: clamp(1.25rem, 1.2vw + 1rem, 1.5rem);
+  --site-columns: 12;
+  --site-max-width: min(100rem, calc(100vw - (var(--site-margin) * 2)));
+  --nav-height: 4rem;
+  --nav-radius: 0.9rem;
+
+  --font-sans: "PP Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --trim-top: 0.38em;
+  --trim-bottom: 0.38em;
+
+  --tracking-1: -0.04em;
+  --tracking-2: -0.035em;
+  --tracking-3: -0.03em;
+  --tracking-4: -0.015em;
+  --tracking-5: -0.0075em;
+  --tracking-6: -0.0025em;
+  --tracking-7: 0.0025em;
+  --tracking-8: 0.0075em;
+  --tracking-9: 0.02em;
+
+  --lh-display: 1.05;
+  --lh-heading-2: 1.1;
+  --lh-heading-3: 1.15;
+  --lh-heading-4: 1.2;
+  --lh-body: 1.35;
+
+  --fs-display: clamp(1.7rem, 1.48rem + 1.1vw, 2.6rem);
+  --fs-h1: clamp(1.55rem, 1.42rem + 0.72vw, 2.15rem);
+  --fs-h2: clamp(1.4rem, 1.33rem + 0.3vw, 1.75rem);
+  --fs-h3: clamp(1.12rem, 1.06rem + 0.34vw, 1.38rem);
+  --fs-h4: clamp(1rem, 0.95rem + 0.24vw, 1.18rem);
+  --fs-h5: clamp(0.95rem, 0.91rem + 0.2vw, 1.1rem);
+  --fs-h6: clamp(1.0625rem, 1.05rem + 0.08vw, 1.125rem);
+  --fs-body: clamp(0.87rem, 0.85rem + 0.06vw, 0.94rem);
+  --fs-small: clamp(0.77rem, 0.75rem + 0.1vw, 0.86rem);
+  --fs-micro: clamp(0.69rem, 0.68rem + 0.06vw, 0.76rem);
+
+  --space-1: clamp(0.375rem, 0.34rem + 0.14vw, 0.5rem);
+  --space-2: clamp(0.625rem, 0.59rem + 0.14vw, 0.75rem);
+  --space-3: clamp(0.875rem, 0.84rem + 0.14vw, 1rem);
+  --space-4: clamp(1.25rem, 1.21rem + 0.16vw, 1.5rem);
+  --space-5: clamp(1.75rem, 1.71rem + 0.16vw, 2rem);
+  --space-6: clamp(2rem, 1.94rem + 0.31vw, 2.5rem);
+  --space-7: clamp(2.25rem, 2.16rem + 0.47vw, 3rem);
+  --space-8: clamp(2.5rem, 2.31rem + 0.94vw, 4rem);
+  --section-space: clamp(7.5rem, 7.06rem + 2.19vw, 9.25rem);
+  --section-space-xl: clamp(8rem, 6.88rem + 5.63vw, 12.5rem);
+
+  --radius-main: 0.72rem;
+  --radius-small: 0.52rem;
+  --radius-tiny: 0.34rem;
+  --radius-round: 999px;
+  --border-width: 0.094rem;
+
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f7f4;
+  --color-surface-3: #f0f0ec;
+  --color-surface-4: #e8e8e3;
+  --color-line: rgba(22, 22, 22, 0.08);
+  --color-line-strong: rgba(22, 22, 22, 0.14);
+  --color-text: #171717;
+  --color-text-secondary: #45423d;
+  --color-text-tertiary: #72706b;
+  --color-text-quaternary: #9c9991;
+  --color-accent: #171717;
+  --color-accent-contrast: #ffffff;
+  --color-tag: rgba(255, 255, 255, 0.82);
+  --color-tag-hover: rgba(255, 255, 255, 1);
+  --color-overlay: rgba(245, 245, 242, 0.76);
+  --color-overlay-soft: rgba(255, 255, 255, 0.68);
+  --color-selection-bg: #171717;
+  --color-selection-text: #ffffff;
+  --body-glow-1: transparent;
+  --body-glow-2: transparent;
+  --body-gradient-start: #fcfcfa;
+  --body-gradient-mid: #fafaf8;
+  --body-gradient-end: #f6f6f2;
+  --nav-blur-bg: rgba(255, 255, 255, 0.82);
+  --drawer-bg: rgba(255, 255, 255, 0.96);
+  --field-bg: rgba(255, 255, 255, 0.9);
+  --field-focus-bg: #ffffff;
+  --surface-caption-bg: rgba(255, 255, 255, 0.88);
+  --surface-caption-border: rgba(22, 22, 22, 0.08);
+  --theme-toggle-icon: "Dark";
+  --project-shell-bg: #ffffff;
+  --media-surface-start: #f4f4f1;
+  --media-surface-end: #ecece8;
+
+  --shadow-soft: 0 10px 22px rgba(17, 17, 17, 0.04);
+  --shadow-card: 0 14px 28px rgba(17, 17, 17, 0.06);
+
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  --transition-fast: 180ms var(--ease-out);
+  --transition-main: 280ms var(--ease-smooth);
+  --transition-slow: 450ms var(--ease-smooth);
+
+  --z-cursor: 9999;
+  --z-nav: 900;
+  --z-drawer: 950;
+  --z-preloader: 1000;
+  --z-transition: 999;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #090909;
+  --color-surface: #0d0d0d;
+  --color-surface-2: #121212;
+  --color-surface-3: #171717;
+  --color-surface-4: #1d1d1d;
+  --color-line: #1c1c1c;
+  --color-line-strong: #2b2b2b;
+  --color-text: #f1f1f1;
+  --color-text-secondary: #d1d2cf;
+  --color-text-tertiary: #a6a8a3;
+  --color-text-quaternary: #7a7c78;
+  --color-accent: #f1f1f1;
+  --color-accent-contrast: #151615;
+  --color-tag: rgba(255, 255, 255, 0.06);
+  --color-tag-hover: rgba(255, 255, 255, 0.1);
+  --color-overlay: rgba(12, 12, 12, 0.58);
+  --color-overlay-soft: rgba(255, 255, 255, 0.04);
+  --color-selection-bg: #f1f1f1;
+  --color-selection-text: #151615;
+  --body-glow-1: rgba(255, 255, 255, 0.055);
+  --body-glow-2: rgba(255, 255, 255, 0.035);
+  --body-gradient-start: #0c0c0c;
+  --body-gradient-mid: #090909;
+  --body-gradient-end: #060606;
+  --nav-blur-bg: rgba(10, 10, 10, 0.84);
+  --drawer-bg: rgba(10, 10, 10, 0.96);
+  --field-bg: rgba(255, 255, 255, 0.02);
+  --field-focus-bg: rgba(255, 255, 255, 0.03);
+  --surface-caption-bg: rgba(8, 8, 8, 0.78);
+  --surface-caption-border: rgba(255, 255, 255, 0.08);
+  --theme-toggle-icon: "Light";
+  --project-shell-bg: #0f0f0f;
+  --media-surface-start: #181818;
+  --media-surface-end: #0d0d0d;
+  --shadow-soft: 0 6px 22px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.14);
+}

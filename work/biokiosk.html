@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HVMDI | Biometric Kiosk Interface</title>
+    <meta
+      name="description"
+      content="Case study: biometric kiosk MVP UX and UI design for TLSContact, focused on multilingual accessibility and high-throughput service flows."
+    />
+    <meta property="og:title" content="HVMDI | Biometric Kiosk Interface" />
+    <meta property="og:description" content="Accessible hardware UX for a multilingual biometric kiosk service." />
+    <meta property="og:image" content="../assets/images/biokiosk-cover.jpg" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HVMDI | Biometric Kiosk Interface" />
+    <meta name="twitter:description" content="Accessible hardware UX for a multilingual biometric kiosk service." />
+    <meta name="twitter:image" content="../assets/images/biokiosk-cover.jpg" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/hvmdi-editorial.css" />
+  </head>
+  <body data-page="work" data-page-kind="case" data-case="biokiosk">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__word">
+        <span class="loader__token">|</span>
+        <span class="loader__token">H</span>
+        <span class="loader__token">V</span>
+        <span class="loader__token">M</span>
+        <span class="loader__token">D</span>
+        <span class="loader__token">I</span>
+        <span class="loader__token">|</span>
+      </div>
+    </div>
+
+    <div class="page-grid" aria-hidden="true">
+      <div class="page-grid__inner">
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+      </div>
+    </div>
+
+    <div class="cursor" id="cursor" aria-hidden="true">
+      <div class="cursor__shape"></div>
+      <div class="cursor__label" id="cursor-label">HVMDI</div>
+    </div>
+
+    <div class="site">
+      <div class="top-meta">
+        <div class="top-meta__stack">
+          <div class="meta-copy">
+            <span id="meta-time">HVMDI / BIOMETRIC KIOSK</span>
+            <span>HVMDI / Biometric Kiosk</span>
+          </div>
+          <a class="meta-home" href="../index.html" data-cursor data-cursor-label="Home">
+            Home
+            <i data-lucide="house" aria-hidden="true"></i>
+          </a>
+        </div>
+        <button class="meta-chip" id="collab-toggle" type="button" aria-pressed="true" hidden>
+          <span id="collab-label">Collaboration on</span>
+        </button>
+      </div>
+
+      <nav class="side-nav" aria-label="Section navigation">
+        <div class="side-nav__rail">
+          <a class="side-nav__link is-active" href="#case-intro" data-section-link="case-intro">Intro</a>
+          <a class="side-nav__link" href="#challenge-section" data-section-link="challenge-section">Challenge</a>
+          <a class="side-nav__link" href="#process-section" data-section-link="process-section">Process</a>
+          <a class="side-nav__link" href="#outcome-section" data-section-link="outcome-section">Outcome</a>
+        </div>
+      </nav>
+
+      <main id="main-content">
+        <section class="section case-intro" id="case-intro" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label drift-item" data-drift data-base-x="0" data-base-y="0">
+              Case study
+              <span class="drift-item__hint" aria-hidden="true">
+                <i data-lucide="move-up-right"></i>
+                <span>Move</span>
+              </span>
+            </div>
+            <div class="section__aside drift-item" data-drift data-base-x="0" data-base-y="0">
+              TLSContact
+              <span class="drift-item__hint" aria-hidden="true">
+                <i data-lucide="move-up-right"></i>
+                <span>Move</span>
+              </span>
+            </div>
+
+            <div class="case-intro-head case-intro-head--smart" data-reveal>
+              <div class="case-intro-head__title drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <h1 class="case-summary__title">Designing a biometric kiosk experience that feels guided, calm, and accessible in high-stakes service environments.</h1>
+              </div>
+              <div class="case-intro-head__summary drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <p class="case-summary__copy">
+                  What started as a TLS kiosk design test became a full service-UX case study. I used
+                  the brief to define the operating context, shape a realistic target user, map the
+                  emotional journey, build the kiosk information architecture, and translate
+                  accessibility requirements into a biometric capture flow that could actually support
+                  first-time users under pressure.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-intro-meta case-intro-meta--smart" data-reveal>
+              <div class="case-summary__note case-summary__note--smart drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <p class="case-summary__eyebrow">Senior Product Designer</p>
+                <p class="case-summary__meta">
+                  Research-led biometric service UX spanning persona definition, journey design,
+                  information architecture, accessibility systems, wireframes, and polished kiosk
+                  interface proposals.
+                </p>
+              </div>
+              <div class="case-facts case-facts--smart">
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Source material</span>
+                  <strong>Persona, journey, IA, accessibility, wireframes, hi-fi screens, and a compact delivery timeline from the TLS design case deck</strong>
+                </article>
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Service context</span>
+                  <strong>Self-service biometric kiosks in airport and government-style environments, designed for first-time users in standing posture</strong>
+                </article>
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Product mandate</span>
+                  <strong>Reduce intimidation, preserve trust, and help users complete sensitive capture steps with less staff intervention and less ambiguity</strong>
+                </article>
+              </div>
+            </div>
+
+            <div class="media-card case-cover-full media-card--document" data-reveal>
+              <img
+                src="../assets/images/pdf-biokiosk/biokiosk-p10.png"
+                alt="High-fidelity biometric kiosk screens showing welcome, language selection, ID entry, face capture guidance, and confirmation states."
+                width="2880"
+                height="1620"
+                loading="lazy"
+              />
+            </div>
+
+            <article class="text-card case-outcome-card case-outcome-card--wide" data-reveal>
+              <h3>Why this project mattered</h3>
+              <p>
+                Biometric kiosks sit at the intersection of service operations, trust, and hardware
+                UX. Users are not casually browsing. They are standing in a formal environment,
+                often time-sensitive, often uncertain about what happens to their data, and trying to
+                complete a task that feels procedural and sensitive at the same time.
+              </p>
+              <p>
+                That means the interface has to do more than display steps. It has to make the
+                machine feel understandable, guide physical behavior at the right moment, surface
+                accessibility controls without stigma, and confirm progress clearly enough that users
+                stay confident from entry to completion.
+              </p>
+              <p>
+                From a product perspective, better kiosk UX is not cosmetic. It lowers hesitation,
+                reduces avoidable staff support, improves throughput, and makes the service feel more
+                reliable and more scalable across locations.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Role &amp; scope</div>
+            <div class="section__aside">What I owned</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">A kiosk project where product clarity, accessibility, and operational realism had to work together.</h2>
+              <p class="section__copy">
+                I treated the brief like a product and service design problem rather than a simple
+                interface exercise. The work covered user framing, service states, system structure,
+                accessibility logic, step-by-step guidance, and the visual decisions needed to make a
+                biometric interaction feel secure but still approachable.
+              </p>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">Ownership</div>
+                <div class="list-row__title">End-to-end kiosk UX concept</div>
+                <div class="list-row__copy">Defined the welcome flow, language selector, accessibility panel, ID entry, consent model, face-capture guidance, confirmation state, and always-available help/navigation elements.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Research</div>
+                <div class="list-row__title">Persona, scenario, and emotional journey</div>
+                <div class="list-row__copy">Built a user model around a realistic traveler profile, then mapped the step-by-step emotional arc to reveal when reassurance, progressive disclosure, or stronger feedback would matter most.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Architecture</div>
+                <div class="list-row__title">Service structure before screen polish</div>
+                <div class="list-row__copy">Mapped the kiosk information architecture first so the system could support global controls, recovery paths, capture logic, and next-step messaging without becoming an opaque sequence of isolated screens.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Accessibility</div>
+                <div class="list-row__title">Inclusive design as a core product layer</div>
+                <div class="list-row__copy">Integrated contrast, larger hit targets, text-size controls, audio guidance, and tactile support ideas into the main flow, treating accessibility as central to service success rather than an optional enhancement.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Product lens</div>
+                <div class="list-row__title">Self-service built around reduced assistance dependency</div>
+                <div class="list-row__copy">Focused on how the kiosk could reduce confusion and support requests while still making users feel informed and respected during a high-trust biometric interaction.</div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>What makes this more than UI</h3>
+                <p>
+                  A kiosk is part product, part environment, part service choreography. Unlike a web
+                  page, it has to anticipate how a person will approach the machine, what they might
+                  be worried about, what physical action they need to take next, and how the system
+                  should respond if they hesitate or make a mistake.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>What I was optimizing for</h3>
+                <p>
+                  The goal was not just visual clarity. It was a calmer interaction model: one that
+                  helps people understand what the kiosk needs from them, why it needs it, and what
+                  successful completion looks like before uncertainty turns into friction.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="challenge-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Challenge</div>
+            <div class="section__aside">Human + service risk</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">The real challenge was helping users perform the right physical action while still feeling safe, informed, and in control.</h2>
+              <p class="section__copy">
+                In a biometric kiosk, every moment has two layers: the user has to understand the
+                digital instruction, and then they have to translate it into the correct physical
+                action in front of the device. That means hierarchy, overlays, states, motion,
+                feedback, and recovery all become part of the service logic.
+              </p>
+            </div>
+
+            <div class="stats-grid stats-grid--wide" data-reveal>
+              <article class="stats-card">
+                <strong>First-time use</strong>
+                <span>The deck assumes unfamiliar users, so orientation and reassurance are product requirements.</span>
+              </article>
+              <article class="stats-card">
+                <strong>Standing posture</strong>
+                <span>The system has to support quick understanding while a person is physically positioned at a machine.</span>
+              </article>
+              <article class="stats-card">
+                <strong>Biometric trust</strong>
+                <span>Consent, privacy clarity, and capture feedback all shape whether the service feels credible.</span>
+              </article>
+              <article class="stats-card">
+                <strong>Accessibility visible</strong>
+                <span>High contrast, text size, audio support, and tactile thinking need to be present from the start.</span>
+              </article>
+            </div>
+
+            <div class="feature-split feature-split--wide" data-reveal>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p4.png"
+                  alt="Persona board for Elodie Martin, including goals, frustrations, technology usage, and accessibility needs."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <article class="text-card case-outcome-card">
+                <h3>What the persona clarified</h3>
+                <p>
+                  Elodie Martin is not a low-confidence user. She is tech-savvy, frequently handles
+                  confidential information, and values efficiency. But even she needs reassurance,
+                  readable text, and a trustworthy system when biometric data is involved. That is a
+                  useful product signal: if a confident professional still needs clarity and
+                  adjustable accessibility, the interface cannot rely on implicit understanding.
+                </p>
+                <p>
+                  The persona also surfaces the real service tension: people want speed and security
+                  at the same time. Good kiosk UX has to satisfy both, not trade one off against the
+                  other.
+                </p>
+              </article>
+            </div>
+
+            <div class="experience-layout" data-reveal>
+              <p class="experience-note">
+                The journey map is the strongest evidence in the case because it shows that users do
+                not move through the experience in a flat emotional state. Curiosity quickly turns
+                into overwhelm, then reassurance, then anxiety during capture, then relief at
+                confirmation. The interface needs to guide that arc deliberately.
+              </p>
+
+              <div class="experience-rows project-rows">
+                <article class="list-row">
+                  <div class="list-row__meta">01</div>
+                  <div class="list-row__title">Approach starts before touch</div>
+                  <div class="list-row__copy">Clear signage, obvious branding, and an understandable welcome state make the kiosk feel invitational instead of procedural and cold.</div>
+                  <span class="list-row__action">Entry</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">02</div>
+                  <div class="list-row__title">Consent needs progressive disclosure</div>
+                  <div class="list-row__copy">Privacy text should not flood the screen. Essentials come first, with expandable detail, so trust-critical information is available without causing immediate overload.</div>
+                  <span class="list-row__action">Trust</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">03</div>
+                  <div class="list-row__title">Capture is a guided interaction, not a camera screen</div>
+                  <div class="list-row__copy">Face framing overlays, proximity instructions, real-time feedback, and success/failure states all need to actively coach the user through the hardest moment.</div>
+                  <span class="list-row__action">Core step</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">04</div>
+                  <div class="list-row__title">Confirmation must close the loop confidently</div>
+                  <div class="list-row__copy">A large success signal, clear next steps, and optional receipt or exit actions reduce doubt and stop users from wondering whether they are actually done.</div>
+                  <span class="list-row__action">Closure</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="gallery-grid gallery-grid--wide" data-reveal>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p5.png"
+                  alt="User journey and scenario board showing actions, emotions, and design opportunities for the biometric kiosk."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <article class="text-card">
+                <h3>User problem</h3>
+                <p>
+                  People need orientation, visible accessibility controls, and confidence about what
+                  the system is doing with their data. They should not have to decode a public
+                  machine while worrying about queues, privacy, or making a mistake in front of
+                  others.
+                </p>
+                <h3>Service problem</h3>
+                <p>
+                  The service needs standardized completion with less intervention from staff.
+                  Better UX here directly supports smoother throughput, clearer support boundaries,
+                  and more consistent outcomes across locations.
+                </p>
+                <h3>Product problem</h3>
+                <p>
+                  The product has to act like a calm facilitator. If the UI feels technical or
+                  unstable, the service loses trust immediately, even if the underlying capture
+                  technology is sound.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="process-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Process</div>
+            <div class="section__aside">Architecture to hi-fi</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">The process moved from service architecture into inclusive interface behavior, then into high-fidelity visual guidance.</h2>
+              <p class="section__copy">
+                The value of the deck is its sequence. It does not jump straight into UI polish. It
+                starts with problem framing and journey logic, defines the system architecture,
+                documents accessibility decisions, validates the flow in wireframes, and only then
+                moves into polished kiosk screens. That is exactly how a product-facing UX process
+                should work on a high-trust service.
+              </p>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">01</div>
+                <div class="list-row__title">Defined service states before visual styling</div>
+                <div class="list-row__copy">Mapped welcome, language choice, accessibility settings, ID entry, consent, capture, troubleshooting, confirmation, and exit so the kiosk could behave like one coherent system.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">02</div>
+                <div class="list-row__title">Made accessibility part of the architecture</div>
+                <div class="list-row__copy">High contrast, text size controls, audio guidance, larger targets, braille-compatible keypad thinking, and haptic feedback cues were planned into the product structure rather than layered on afterwards.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">03</div>
+                <div class="list-row__title">Used low fidelity to validate sequencing and control</div>
+                <div class="list-row__copy">The wireframes focus on the moments that matter most: welcome, language, ID input, capture, and confirmation. That keeps decision-making focused on usability before aesthetics take over.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">04</div>
+                <div class="list-row__title">Translated system logic into calmer visual states</div>
+                <div class="list-row__copy">The hi-fi stage strengthens visual guidance through clearer hierarchy, more confident action buttons, explicit overlays, and less ambiguous confirmation feedback.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">05</div>
+                <div class="list-row__title">Kept the concept production-minded</div>
+                <div class="list-row__copy">The timeline shows a practical cadence: 8 hours for research and scenarios, 4 hours for wireframes, and 4 hours for hi-fi. That reflects a focused concept sprint rather than a vague speculative exercise.</div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="gallery-grid gallery-grid--wide" data-reveal>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p6.png"
+                  alt="Biometric kiosk information architecture, part one."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p7.png"
+                  alt="Biometric kiosk information architecture, part two."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p8.png"
+                  alt="Accessibility considerations for the biometric kiosk, including WCAG AAA contrast, touch targets, audio guidance, and tactile support."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p9.png"
+                  alt="Low-fidelity wireframes for the biometric kiosk flow."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>Why the IA is central</h3>
+                <p>
+                  In a kiosk, information architecture is not just site structure. It is the mental
+                  model of the whole service. Users cannot casually browse or recover the way they
+                  might on desktop. The next step must always be explicit, finite, and physically
+                  actionable. That is why the IA work matters so much here.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>Why the accessibility board elevates the project</h3>
+                <p>
+                  The accessibility page turns values into requirements. WCAG AAA contrast, 44x44
+                  touch targets, voice guidance, spoken confirmations, braille keypad support, and
+                  haptic feedback are all described as interface behaviors. That makes the work feel
+                  product-ready instead of aspirational.
+                </p>
+              </article>
+            </div>
+
+            <div class="gallery-grid gallery-grid--wide" data-reveal>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p10.png"
+                  alt="High-fidelity biometric kiosk screens."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-biokiosk/biokiosk-p11.png"
+                  alt="Project timeline for the biometric kiosk showing research, wireframes, and hi-fi design phases."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>What I would validate next</h3>
+                <p>
+                  If this moved into production, the next step would be scenario-based testing with
+                  users of different ages, language preferences, and accessibility needs. I would
+                  specifically validate language switching discoverability, confidence during consent,
+                  clarity of face-capture feedback, and the effectiveness of recovery states when
+                  capture fails.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>How this connects to product delivery</h3>
+                <p>
+                  For a service like TLS, the kiosk is only one part of the experience, but it can
+                  become the point where trust is either reinforced or lost. That makes its UX a
+                  cross-functional asset: part customer experience, part operational tooling, and
+                  part service-standardization mechanism.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="outcome-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Outcome</div>
+            <div class="section__aside">UX and service value</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">The concept demonstrates how kiosk UX can feel more humane, more predictable, and more operationally useful at the same time.</h2>
+              <p class="section__copy">
+                Even as a concept case, the project shows a strong product principle: calm self-service
+                comes from structured guidance. By reducing ambiguity and making support features
+                visible, the kiosk becomes easier to trust for users and easier to scale for the
+                service.
+              </p>
+            </div>
+
+            <div class="stats-grid stats-grid--wide" data-reveal>
+              <article class="stats-card">
+                <strong>WCAG AAA</strong>
+                <span>Contrast goals documented for readability in bright, formal, public-service conditions.</span>
+              </article>
+              <article class="stats-card">
+                <strong>44×44</strong>
+                <span>Large interaction targets designed to reduce motor friction and input mistakes.</span>
+              </article>
+              <article class="stats-card">
+                <strong>8h / 4h / 4h</strong>
+                <span>Research and scenarios, wireframes, then hi-fi design in a compact concept sprint.</span>
+              </article>
+              <article class="stats-card">
+                <strong>6 key moments</strong>
+                <span>Approach, welcome, consent, capture, confirmation, and exit all treated as trust moments.</span>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>UX outcome</h3>
+                <p>
+                  The experience becomes easier to approach, easier to read, and less intimidating
+                  for first-time users. Language choice, privacy reassurance, capture guidance, and
+                  confirmation all become discrete trust moments instead of getting buried inside one
+                  technical sequence.
+                </p>
+                <p>
+                  The interface also gives stronger physical direction. Overlays, progress signals,
+                  voice guidance opportunities, and clear next-step messaging make the machine feel
+                  more supportive and less opaque.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>Service outcome</h3>
+                <p>
+                  For the service model, the concept points toward shorter assistance loops,
+                  stronger consistency across centres, and less friction in routine onboarding tasks.
+                  More importantly, it establishes a reusable interaction pattern for sensitive
+                  self-service steps that could support future kiosk deployments.
+                </p>
+                <p>
+                  That is where the work becomes product-oriented: good kiosk UX improves
+                  confidence, standardization, throughput, and trust in the system itself.
+                </p>
+              </article>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">Lesson</div>
+                <div class="list-row__title">Hardware UX is service choreography</div>
+                <div class="list-row__copy">The interface, the device, the user’s posture, and the service environment all have to align. The best kiosk experience is the one that makes the next physical action feel obvious, safe, and calm.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Lesson</div>
+                <div class="list-row__title">Accessibility improves operations, not just inclusion</div>
+                <div class="list-row__copy">Visible accessibility settings, readable contrast, and clearer control sizing help more than edge-case users. They make the whole service easier to understand, which reduces hesitation and support demand.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Lesson</div>
+                <div class="list-row__title">Trust should be designed at every state change</div>
+                <div class="list-row__copy">Consent, live capture feedback, and completion messaging are not decorative moments. They are the points where the service either gains or loses user confidence.</div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="list-block list-block--wide case-next case-next--wide" data-reveal>
+              <a class="list-row" href="smartwebpay.html" data-cursor data-cursor-label="Previous">
+                <div class="list-row__meta">Previous</div>
+                <div class="list-row__title">Smart Web Pay</div>
+                <div class="list-row__copy">
+                  A research-led parking payment redesign focused on trust, clarity, and mobile-first
+                  completion.
+                </div>
+                <span class="list-row__action">
+                  Open
+                  <i data-lucide="arrow-left" aria-hidden="true"></i>
+                </span>
+              </a>
+              <a class="list-row" href="transitun.html" data-cursor data-cursor-label="Next">
+                <div class="list-row__meta">Next</div>
+                <div class="list-row__title">Transitun</div>
+                <div class="list-row__copy">
+                  A civic mobility concept focused on route confidence, stop awareness, and calmer
+                  commuter decisions.
+                </div>
+                <span class="list-row__action">
+                  Open
+                  <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>HVMDI / Biometric kiosk case study</span>
+        <span>Hardware UX · accessibility · multilingual service design</span>
+      </footer>
+    </div>
+
+    <script src="../assets/vendor/lucide.min.js"></script>
+    <script src="../js/hvmdi-editorial.js"></script>
+  </body>
+</html>

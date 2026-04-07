@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HVMDI | Smart Web Pay</title>
+    <meta
+      name="description"
+      content="Case study: redesigning SCHEIDT & BACHMAN's Smart Web Pay flow for clearer parking payments and stronger mobile usability."
+    />
+    <meta property="og:title" content="HVMDI | Smart Web Pay" />
+    <meta property="og:description" content="A mobile-first payment flow redesign for parking payment UX at scale." />
+    <meta property="og:image" content="../assets/images/smartwebpay-cover-custom.jpg" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HVMDI | Smart Web Pay" />
+    <meta name="twitter:description" content="A mobile-first payment flow redesign for parking payment UX at scale." />
+    <meta name="twitter:image" content="../assets/images/smartwebpay-cover-custom.jpg" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/hvmdi-editorial.css" />
+  </head>
+  <body data-page="work" data-page-kind="case" data-case="smartwebpay">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__word">
+        <span class="loader__token">|</span>
+        <span class="loader__token">H</span>
+        <span class="loader__token">V</span>
+        <span class="loader__token">M</span>
+        <span class="loader__token">D</span>
+        <span class="loader__token">I</span>
+        <span class="loader__token">|</span>
+      </div>
+    </div>
+
+    <div class="page-grid" aria-hidden="true">
+      <div class="page-grid__inner">
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+        <div class="page-grid__col"></div>
+      </div>
+    </div>
+
+    <div class="cursor" id="cursor" aria-hidden="true">
+      <div class="cursor__shape"></div>
+      <div class="cursor__label" id="cursor-label">HVMDI</div>
+    </div>
+
+    <div class="site">
+      <div class="top-meta">
+        <div class="top-meta__stack">
+          <div class="meta-copy">
+            <span id="meta-time">HVMDI / SMART WEB PAY</span>
+            <span>HVMDI / Smart Web Pay</span>
+          </div>
+          <a class="meta-home" href="../index.html" data-cursor data-cursor-label="Home">
+            Home
+            <i data-lucide="house" aria-hidden="true"></i>
+          </a>
+        </div>
+        <button class="meta-chip" id="collab-toggle" type="button" aria-pressed="true" hidden>
+          <span id="collab-label">Collaboration on</span>
+        </button>
+      </div>
+
+      <nav class="side-nav" aria-label="Section navigation">
+        <div class="side-nav__rail">
+          <a class="side-nav__link is-active" href="#case-intro" data-section-link="case-intro">Intro</a>
+          <a class="side-nav__link" href="#challenge-section" data-section-link="challenge-section">Challenge</a>
+          <a class="side-nav__link" href="#process-section" data-section-link="process-section">Process</a>
+          <a class="side-nav__link" href="#outcome-section" data-section-link="outcome-section">Outcome</a>
+        </div>
+      </nav>
+
+      <main id="main-content">
+        <section class="section case-intro" id="case-intro" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label drift-item" data-drift data-base-x="0" data-base-y="0">
+              Case study
+              <span class="drift-item__hint" aria-hidden="true">
+                <i data-lucide="move-up-right"></i>
+                <span>Move</span>
+              </span>
+            </div>
+            <div class="section__aside drift-item" data-drift data-base-x="0" data-base-y="0">
+              SCHEIDT &amp; BACHMANN
+              <span class="drift-item__hint" aria-hidden="true">
+                <i data-lucide="move-up-right"></i>
+                <span>Move</span>
+              </span>
+            </div>
+
+            <div class="case-intro-head case-intro-head--smart" data-reveal>
+              <div class="case-intro-head__title drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <h1 class="case-summary__title">Reframing Smart Web Pay as a clearer, faster, and more credible parking payment product.</h1>
+              </div>
+              <div class="case-intro-head__summary drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <p class="case-summary__copy">
+                  Smart Web Pay was not just a screen-redesign exercise. It was a full product UX
+                  investigation covering strategy interviews, market signals, competitor review,
+                  personas, journey mapping, product-reaction surveys, and a detailed UI audit. I
+                  used that evidence to reshape the payment experience around clarity, mobile
+                  responsiveness, and trust at the exact moments where users are most likely to
+                  hesitate.
+                </p>
+              </div>
+            </div>
+
+            <div class="case-intro-meta case-intro-meta--smart" data-reveal>
+              <div class="case-summary__note case-summary__note--smart drift-item" data-drift data-base-x="0" data-base-y="0">
+                <span class="drift-item__hint" aria-hidden="true">
+                  <i data-lucide="move-up-right"></i>
+                  <span>Move</span>
+                </span>
+                <p class="case-summary__eyebrow">Senior Product Designer</p>
+                <p class="case-summary__meta">
+                  Research-led parking payment redesign across stakeholder strategy, journey
+                  mapping, UX audit, information architecture, and mobile-first interface design.
+                </p>
+              </div>
+              <div class="case-facts case-facts--smart">
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Research scope</span>
+                  <strong>117-page research, audit, IA, and flow deck used as the design source of truth</strong>
+                </article>
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Market signal</span>
+                  <strong>8 stakeholder markets represented, with 75% preferring a web-based parking product</strong>
+                </article>
+                <article class="case-fact drift-item" data-drift data-base-x="0" data-base-y="0">
+                  <span class="drift-item__hint" aria-hidden="true">
+                    <i data-lucide="move-up-right"></i>
+                    <span>Move</span>
+                  </span>
+                  <span>Core brief</span>
+                  <strong>Reduce friction, improve mobile completion, and turn parking payment into a stronger sellable product story</strong>
+                </article>
+              </div>
+            </div>
+
+            <div class="media-card case-cover-full media-card--document" data-reveal>
+              <img
+                src="../assets/images/smartwebpay-cover-custom.jpg"
+                alt="Smart Web Pay original portfolio hero showing the parking payment web solution across tablet and mobile layouts."
+                width="3546"
+                height="1590"
+                loading="lazy"
+              />
+            </div>
+
+            <article class="text-card case-outcome-card case-outcome-card--wide" data-reveal>
+              <h3>Why this project mattered</h3>
+              <p>
+                Parking payment is a time-sensitive service problem. Users are often on mobile,
+                already in transit, and unwilling to tolerate ambiguous costs, weak feedback, or
+                technical instability. If the experience looks unreliable, the product stops
+                feeling useful immediately.
+              </p>
+              <p>
+                The business challenge was broader than visual polish. Stakeholders were thinking
+                about market fit, future features, onboarding more carparks, and making the
+                product more competitive in regions where people already had alternatives like
+                FlashParking, J-Pass, JustPark, Parkmobile, and SKIDATA.
+              </p>
+              <p>
+                My job was to connect those two realities: make the current payment journey easier
+                to trust and complete, while also defining a stronger product direction that could
+                scale into booking, subscriptions, tracking, and smarter digital parking services.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Role &amp; scope</div>
+            <div class="section__aside">What I owned</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">A payment redesign grounded in strategy, research, audit, and product structure.</h2>
+              <p class="section__copy">
+                I worked across the full UX scope: stakeholder framing, survey design, competitor
+                benchmarking, persona building, empathy mapping, journey mapping, UX audit,
+                information architecture, user flows, and the resulting interface direction. This
+                meant treating the work like a product definition exercise rather than only a visual
+                redesign.
+              </p>
+            </div>
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">Strategy</div>
+                <div class="list-row__title">Stakeholder and market framing</div>
+                <div class="list-row__copy">Defined interview goals, gathered cross-market input, and clarified how Smart Web Pay was expected to compete, expand, and win adoption in different regions.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Research</div>
+                <div class="list-row__title">User research and scenario building</div>
+                <div class="list-row__copy">Built personas, empathy maps, scenarios, and user journeys to understand where parking stress begins, how payment friction shows up, and what users need before, during, and after a transaction.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Audit</div>
+                <div class="list-row__title">Evidence-based interface diagnosis</div>
+                <div class="list-row__copy">Documented concrete UI issues across onboarding, information, summary, payment, error, and success states, then translated them into a prioritized guideline matrix.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Architecture</div>
+                <div class="list-row__title">Information architecture and flow definition</div>
+                <div class="list-row__copy">Mapped the product structure from splash and onboarding through search, booking, payment, tracking, notifications, and help, so the redesigned experience would support expansion instead of patchwork growth.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Delivery</div>
+                <div class="list-row__title">UX/UI recommendations ready for product decisions</div>
+                <div class="list-row__copy">Converted the research into concrete design priorities such as simpler payment hierarchy, stronger responsive behavior, better transaction feedback, more payment options, and cleaner service states.</div>
+                <div></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="challenge-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Challenge</div>
+            <div class="section__aside">Research signals</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">The problem was not just “make payment cleaner.” It was “make the product more trustworthy, more sellable, and more useful across real parking contexts.”</h2>
+              <p class="section__copy">
+                The source deck showed three problems at once. First, the current experience had
+                obvious UI and responsiveness issues. Second, the product opportunity was larger than
+                payment alone: people wanted booking, real-time support, vehicle tracking, digital
+                tickets, and subscriptions. Third, the business needed Smart Web Pay to feel like a
+                serious B2C product, not a narrow utility with weak first impressions.
+              </p>
+            </div>
+
+            <div class="stats-grid stats-grid--wide" data-reveal>
+              <article class="stats-card">
+                <strong>117 pages</strong>
+                <span>Full research package covering strategy, personas, surveys, audit, IA, and user flows.</span>
+              </article>
+              <article class="stats-card">
+                <strong>8 markets</strong>
+                <span>Stakeholder input spanned USA, Turkey, Singapore/New Zealand, Switzerland, Germany, Eastern Europe, UK, and Tunisia.</span>
+              </article>
+              <article class="stats-card">
+                <strong>75%</strong>
+                <span>Of stakeholder responses favored a web-based app over a native mobile app.</span>
+              </article>
+              <article class="stats-card">
+                <strong>37.5%</strong>
+                <span>Saw the product as a key factor for winning, and the same share prioritized pay-in-carpark or vouchers/prepayment as must-have.</span>
+              </article>
+            </div>
+
+            <div class="experience-layout" data-reveal>
+              <p class="experience-note">
+                The research exposed a product under tension. Users wanted faster parking,
+                simpler payment, and better guidance. Stakeholders wanted broader sellability,
+                future-service expansion, and a stronger competitive position. The redesign had
+                to serve both.
+              </p>
+
+              <div class="experience-rows project-rows">
+                <article class="list-row">
+                  <div class="list-row__meta">01</div>
+                  <div class="list-row__title">Time pressure was built into the use case</div>
+                  <div class="list-row__copy">
+                    Personas and scenarios showed users paying while heading to meetings, events,
+                    or daily routines. Delay, uncertainty, or long queues directly damaged the
+                    overall service perception.
+                  </div>
+                  <span class="list-row__action">Context</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">02</div>
+                  <div class="list-row__title">The current product created doubt at critical steps</div>
+                  <div class="list-row__copy">
+                    Demo feedback surfaced technical issues, weak mobile responsiveness, unclear
+                    payment steps, poor summary design, and distrust caused by UI inconsistency.
+                  </div>
+                  <span class="list-row__action">Issue</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">03</div>
+                  <div class="list-row__title">The roadmap already extended beyond payment</div>
+                  <div class="list-row__copy">
+                    Stakeholders expected backoffice capabilities, pre-booking via QR code and LPN,
+                    automatic payment, subscriptions, digital tickets, vouchers, and car finding.
+                  </div>
+                  <span class="list-row__action">Roadmap</span>
+                </article>
+                <article class="list-row">
+                  <div class="list-row__meta">04</div>
+                  <div class="list-row__title">Product perception was fragile</div>
+                  <div class="list-row__copy">
+                    In reaction questions, only 12.5% said they would keep using the platform,
+                    50% answered maybe, and 37.5% said no. The redesign needed to restore
+                    confidence before it could meaningfully drive adoption.
+                  </div>
+                  <span class="list-row__action">Risk</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="feature-split feature-split--wide" data-reveal>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p9.png"
+                  alt="Research screenshot listing requested Smart Web Pay future features such as QR booking, subscriptions, digital tickets, and automatic payment."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <article class="text-card case-outcome-card">
+                <h3>Roadmap evidence from the source deck</h3>
+                <p>
+                  The feature-prioritization pages in the research deck made it clear that users and
+                  stakeholders were not asking for a prettier payment page in isolation. They were
+                  asking for a broader parking service product: pre-booking, subscriptions, smart
+                  ticketing, better carpark information, voucher support, vehicle recovery, and
+                  automatic payment.
+                </p>
+                <p>
+                  That matters from a product-management point of view. If the architecture is weak
+                  at the payment layer, it becomes much harder to scale the product into a
+                  multi-service offer later. So the redesign had to improve the current flow while
+                  also establishing a better foundation for future service modules.
+                </p>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>User problem</h3>
+                <p>
+                  Kamel, Yasmine, and Slim represented three important realities: the punctual
+                  professional who wants zero friction, the user trying to avoid being late and
+                  wasting money, and the quality-sensitive digital user who abandons quickly when
+                  responsiveness or UI credibility feels weak. Across all three, the recurring need
+                  was the same: save time, reduce uncertainty, and make payment feel reliable.
+                </p>
+                <p>
+                  Their journey maps showed specific opportunity points: display availability before
+                  arrival, make spot-finding more guided, support booking before entering the lot,
+                  simplify payment immediately or later, and help users relocate their vehicle or
+                  find the exit.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>Business problem</h3>
+                <p>
+                  The business needed Smart Web Pay to feel market-ready across regions with
+                  different parking behaviors and competitive expectations. Stakeholder concerns
+                  around pricing, deployment, complicated UX, and the fragmentation of multiple apps
+                  pointed to a broader product challenge: Smart Web Pay needed a clearer value
+                  proposition, a better first impression, and a more coherent roadmap story.
+                </p>
+                <p>
+                  In other words, conversion and positioning were linked. If the product felt slow,
+                  clumsy, or visually inconsistent, it weakened both the immediate payment journey
+                  and the larger commercial narrative around onboarding more carparks.
+                </p>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>Persona insight that shaped the redesign</h3>
+                <p>
+                  The deck’s three personas were useful because they exposed different kinds of
+                  failure. Kamel represented the repeat user who values speed and hates operational
+                  waste. Yasmine represented the user whose lateness and stress are tied directly to
+                  parking friction. Slim represented the quality-sensitive digital user who leaves
+                  immediately when responsiveness and interface quality feel poor.
+                </p>
+                <p>
+                  That mix told me the experience could not optimize for only one persona type. It
+                  had to serve repeat users, urgent users, and quality-sensitive users at once. In
+                  practice, that means fewer ambiguous steps, more predictable summaries, less
+                  visual noise, and a stronger sense that the system is under control.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>What the survey data really said</h3>
+                <p>
+                  The survey results were not subtle. Respondents asked for minimum clicks to
+                  payment, ease of use, modern design, and basic completeness. Product-reaction
+                  answers later reinforced the same pattern: technical issues, loading time,
+                  responsiveness, and weak payment steps were hurting trust and continuity.
+                </p>
+                <p>
+                  That is important from a product angle because it means the redesign brief was not
+                  only aesthetic. It was a usability-and-adoption problem. The right solution was to
+                  simplify the path, reduce recovery friction, and make the product feel more stable
+                  and commercially credible.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="process-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Process</div>
+            <div class="section__aside">Research to redesign</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">I used the deck as a product-definition tool, then translated it into clearer architecture and interface priorities.</h2>
+              <p class="section__copy">
+                The most valuable part of the work was not a single mockup. It was the sequence of
+                evidence: stakeholder strategy, competitive review, personas, scenario logic, survey
+                data, a detailed audit, and finally information architecture and user flows. That
+                sequence made the redesign decisions defensible and gave the product team a much
+                stronger basis for what to fix now versus what to build next.
+              </p>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">01</div>
+                <div class="list-row__title">Defined research goals with the business first</div>
+                <div class="list-row__copy">Started by clarifying market expectations, product vision, success criteria, and stakeholder concerns so later user research would stay tied to business realities.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">02</div>
+                <div class="list-row__title">Benchmarked the category across 9 reference products</div>
+                <div class="list-row__copy">Reviewed services such as SKIDATA, DESIGNA, J-Pass, JustPark, FlashParking, Mawgif, AAATap, HONK, and Parkmobile to understand payment expectations, booking patterns, and service breadth.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">03</div>
+                <div class="list-row__title">Mapped personas, empathy, and full parking journeys</div>
+                <div class="list-row__copy">Built user stories around lateness, queue stress, unsupported payment methods, weak optimization, and the need for availability, booking, and vehicle tracking.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">04</div>
+                <div class="list-row__title">Converted product reactions into design priorities</div>
+                <div class="list-row__copy">Feedback showed the hardest parts were technical issues, visual quality, loading time, weak responsiveness, and payment-step complexity, so those became the primary redesign targets.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">05</div>
+                <div class="list-row__title">Ran a granular UX audit and guideline matrix</div>
+                <div class="list-row__copy">Documented detailed issues such as weak contrast, oversized shadows, poor spacing, missing transaction time, looping animation, weak button design, poor icon treatment, and error-state layout problems.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">06</div>
+                <div class="list-row__title">Reframed the product structure through IA and user flows</div>
+                <div class="list-row__copy">Defined the service from onboarding to search, booking, payment, tracking, notifications, and help so Smart Web Pay could behave more like a coherent product ecosystem.</div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="gallery-grid gallery-grid--wide" data-reveal>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p73.png"
+                  alt="User journey map from the Smart Web Pay research deck showing parking stages, actions, emotions, and opportunity areas."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p100.png"
+                  alt="UX audit screenshot from the Smart Web Pay deck highlighting onboarding issues such as line spacing and button contrast."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p104.png"
+                  alt="Payment audit screenshot from the Smart Web Pay deck showing layout, spacing, and motion issues in payment states."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p114.png"
+                  alt="Information architecture diagram from the Smart Web Pay research deck mapping search, booking, payment, tracking, and support features."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>What changed in the redesign direction</h3>
+                <p>
+                  The final design direction focused on making the payment sequence easier to read
+                  and safer to continue. That meant displaying process steps before the main action,
+                  cleaning up margins and spacing, reducing decorative shadows, improving button
+                  contrast, simplifying summary and payment screens, and making status feedback feel
+                  more deliberate instead of ornamental.
+                </p>
+                <p>
+                  The audit also made several tactical issues obvious: avoid captcha where possible,
+                  add more payment methods, lighten the receipt design, fix mobile and Ubuntu
+                  responsiveness, add show/hide controls where needed, and stop unnecessary looping
+                  motion that distracts from the transaction itself.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>Why the IA and flow work mattered</h3>
+                <p>
+                  One of the biggest lessons from the deck was that Smart Web Pay was already
+                  growing beyond a single payment moment. The information architecture included map,
+                  tracking, search, booking, settings, notifications, help, payment info, history,
+                  and exit guidance. Without a clear structure, those features would eventually make
+                  the product harder to understand instead of more valuable.
+                </p>
+                <p>
+                  By treating the redesign as both a service flow and a system architecture problem,
+                  I could make decisions that improved the current transaction while also preparing
+                  the product for future modules like subscriptions, digital tickets, and stronger
+                  carpark operations support.
+                </p>
+              </article>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">Audit</div>
+                <div class="list-row__title">Onboarding and information screens needed basic readability fixes</div>
+                <div class="list-row__copy">The deck highlighted small line spacing, bad button contrast, heavy shadows, inconsistent vertical alignment, and missing breathing room. Those are not cosmetic details in a transactional product; they directly affect scan speed and confidence.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Summary</div>
+                <div class="list-row__title">The summary layer was not doing enough to reassure users</div>
+                <div class="list-row__copy">Missing transaction time, too much empty space, too few payment methods, and weak card treatment made the review step feel unfinished. The redesign needed to turn summary into a confidence checkpoint, not just a transitional screen.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">Payment</div>
+                <div class="list-row__title">The most important screen had the most trust issues</div>
+                <div class="list-row__copy">The audit called out wrong animation behavior, weak chart consistency, bad button design, poor icon contrast, and the lack of show/hide behavior. Those are exactly the moments where users decide whether the product feels safe to continue with.</div>
+                <div></div>
+              </article>
+              <article class="list-row">
+                <div class="list-row__meta">System</div>
+                <div class="list-row__title">The redesign had to define a repeatable UI language</div>
+                <div class="list-row__copy">Spacing, borders, shadows, button treatments, and message hierarchy needed consistent rules so the product could grow into booking, tracking, notifications, and subscriptions without becoming even more fragmented.</div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="gallery-grid gallery-grid--wide" data-reveal>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p116.png"
+                  alt="Smart Web Pay user flow, part one, covering onboarding, login, search, parking details, and account paths."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document media-card--left">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p117.png"
+                  alt="Smart Web Pay user flow, part two, covering search, receipt, payment details, parking date and time, and QR scan paths."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p94.png"
+                  alt="Research statistics showing the hardest parts of the current Smart Web Pay product, including design quality, technical issues, loading time, and responsiveness."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+              <div class="media-card media-card--document">
+                <img
+                  src="../assets/images/pdf-smartwebpay/smartwebpay-p96.png"
+                  alt="Research statistics showing the most requested Smart Web Pay improvements, including technical fixes, stronger UX, more features, and design improvements."
+                  width="2880"
+                  height="1620"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="outcome-section" data-observe-section>
+          <div class="section__grid">
+            <div class="section__topline"></div>
+            <div class="section__label">Outcome</div>
+            <div class="section__aside">UX and product impact</div>
+            <div class="case-section-head case-section-head--wide" data-reveal>
+              <h2 class="section__heading">The redesign created a stronger payment flow and a stronger product story at the same time.</h2>
+              <p class="section__copy">
+                The clearest outcome was strategic: Smart Web Pay no longer had to be discussed as a
+                narrow payment screen with UI issues. The work reframed it as a multi-step parking
+                service with clearer opportunity areas, a stronger architecture, and a more credible
+                user experience direction for future rollout.
+              </p>
+            </div>
+
+            <div class="stats-grid stats-grid--wide" data-reveal>
+              <article class="stats-card">
+                <strong>75%</strong>
+                <span>Preferred a web-based product, validating a responsive web-first design direction.</span>
+              </article>
+              <article class="stats-card">
+                <strong>37.5%</strong>
+                <span>Identified the product as a key factor for winning in-market, raising the importance of design quality.</span>
+              </article>
+              <article class="stats-card">
+                <strong>27.3%</strong>
+                <span>Of reaction responses clustered around UX improvement, design improvement, and technical fixes as the top needs.</span>
+              </article>
+              <article class="stats-card">
+                <strong>9 competitors</strong>
+                <span>Benchmarked to frame the product beyond payment and identify feature expectations in the category.</span>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>UX outcome</h3>
+                <p>
+                  The design direction became easier to scan, easier to trust, and better adapted to
+                  the real context of use. Instead of relying on visual heaviness and unclear spacing,
+                  the redesigned structure prioritized simpler steps, stronger contrast, cleaner
+                  summaries, and more explicit state changes. That directly supports the kinds of
+                  users represented in the research: people in a hurry, people trying to avoid
+                  stress, and people quick to abandon when a product feels technically weak.
+                </p>
+                <p>
+                  More specifically, the redesigned direction improves the parts of the journey that
+                  research showed were most fragile: first comprehension, summary confidence,
+                  payment reassurance, and post-action clarity. Those improvements matter because a
+                  user can forgive a limited feature set sooner than they forgive uncertainty during
+                  a live payment.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>Product outcome</h3>
+                <p>
+                  Product-wise, the case study did more than fix UI defects. It created a clearer
+                  roadmap language: booking, QR and LPN pre-booking, subscriptions, digital tickets,
+                  automatic payment, car finding, and stronger PSP flexibility. That gives business
+                  stakeholders something more useful than a redesigned screen set. It gives them a
+                  structured view of what the product can become and which service gaps matter most.
+                </p>
+                <p>
+                  It also creates a cleaner product conversation with stakeholders. Instead of
+                  debating isolated screens, teams can now talk about service capabilities, market
+                  competitiveness, roadmap sequencing, and the UX foundations required to support
+                  future carparks and payment-service integrations.
+                </p>
+              </article>
+            </div>
+
+            <div class="text-grid text-grid--wide" data-reveal>
+              <article class="text-card">
+                <h3>What I would measure next</h3>
+                <p>
+                  If this redesign moved into delivery, the next metrics I would track are
+                  time-to-payment, abandonment rate by step, mobile vs desktop completion, failure
+                  rate in payment and summary states, support requests tied to unclear status, and
+                  adoption of new features like pre-booking or digital ticketing.
+                </p>
+                <p>
+                  I would also track the business-facing side of the redesign: how many carparks can
+                  be onboarded without custom UX exceptions, whether stakeholders see the product as
+                  more sellable after the redesign, and whether the experience can support more PSPs
+                  and service add-ons with less implementation friction.
+                </p>
+              </article>
+              <article class="text-card">
+                <h3>What this case says about my work</h3>
+                <p>
+                  This project is a good example of how I operate as a UX designer with product
+                  instincts. I did not treat research, audit, IA, and UI as separate activities. I
+                  used each one to reduce ambiguity, align business intent with user reality, and
+                  turn a scattered service experience into a clearer product system teams can
+                  actually build on.
+                </p>
+                <p>
+                  It also shows how I work as a product-minded designer: I use research to frame the
+                  opportunity, identify which problems are interaction problems versus product
+                  structure problems, and then move from evidence to a design direction that teams
+                  can defend, prioritize, and ship.
+                </p>
+              </article>
+            </div>
+
+            <div class="list-block list-block--wide" data-reveal>
+              <article class="list-row">
+                <div class="list-row__meta">Lesson</div>
+                <div class="list-row__title">Parking payment is a service-design problem, not just a payment-screen problem</div>
+                <div class="list-row__copy">
+                  The strongest solution came from connecting pricing, timing, availability,
+                  booking, navigation, tracking, trust, and technical reliability into one coherent
+                  flow. That is what made the work product-oriented rather than purely visual.
+                </div>
+                <div></div>
+              </article>
+            </div>
+
+            <div class="list-block list-block--wide case-next case-next--wide" data-reveal>
+              <a class="list-row" href="transitun.html" data-cursor data-cursor-label="Previous">
+                <div class="list-row__meta">Previous</div>
+                <div class="list-row__title">Transitun</div>
+                <div class="list-row__copy">
+                  A civic mobility concept focused on route clarity, confidence, and everyday public
+                  transport decision-making.
+                </div>
+                <span class="list-row__action">
+                  Open
+                  <i data-lucide="arrow-left" aria-hidden="true"></i>
+                </span>
+              </a>
+              <a class="list-row" href="forvia.html" data-cursor data-cursor-label="Next">
+                <div class="list-row__meta">Next</div>
+                <div class="list-row__title">FORVIA / Palantir Apps</div>
+                <div class="list-row__copy">
+                  Enterprise analytics dashboards and a shared design system for complex
+                  manufacturing operations.
+                </div>
+                <span class="list-row__action">
+                  Open
+                  <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>HVMDI / Smart Web Pay case study</span>
+        <span>Research strategy · payment UX · IA · mobile-first service design</span>
+      </footer>
+    </div>
+
+    <script src="../assets/vendor/lucide.min.js"></script>
+    <script src="../js/hvmdi-editorial.js"></script>
+  </body>
+</html>

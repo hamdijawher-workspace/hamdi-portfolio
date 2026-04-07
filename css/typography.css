@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../assets/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+html {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  background: linear-gradient(
+    180deg,
+    var(--body-gradient-start) 0%,
+    var(--body-gradient-mid) 55%,
+    var(--body-gradient-end) 100%
+  );
+}
+
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+h1,
+.display {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-3);
+}
+
+h2 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-4);
+}
+
+h3 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading-2);
+  letter-spacing: var(--tracking-4);
+}
+
+h4 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading-3);
+  letter-spacing: var(--tracking-5);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-heading-4);
+  letter-spacing: var(--tracking-5);
+}
+
+h6 {
+  font-size: var(--fs-h6);
+  line-height: var(--lh-heading-4);
+  letter-spacing: var(--tracking-6);
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
+}
+
+small,
+.text-small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+}
+
+.text-micro {
+  font-size: var(--fs-micro);
+  line-height: var(--lh-body);
+}
+
+.eyebrow,
+.section-label,
+.meta-kicker {
+  font-size: var(--fs-micro);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-9);
+  text-transform: uppercase;
+  color: var(--color-text-quaternary);
+}
+
+.clock-text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: var(--color-text);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.text-quaternary {
+  color: var(--color-text-quaternary);
+}
