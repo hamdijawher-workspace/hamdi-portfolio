@@ -149,6 +149,7 @@ function injectSettings() {
 }
 
 function injectProgressMeta() {
+  if (document.body.dataset.pageKind === "case") return;
   if (document.getElementById("progress-datetime")) return;
   const site = document.querySelector(".site");
   if (!site) return;
@@ -574,25 +575,51 @@ function initSectionNav() {
   const sections = [...document.querySelectorAll("[data-observe-section]")];
   if (sections.length === 0) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const active = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const setActiveSection = (sectionId) => {
+    elements.sectionLinks.forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.sectionLink === sectionId);
+    });
+  };
 
-      if (!active) return;
+  let ticking = false;
 
-      elements.sectionLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.dataset.sectionLink === active.target.id);
-      });
-    },
-    {
-      threshold: [0.2, 0.45, 0.6],
-      rootMargin: "-20% 0px -35% 0px"
-    }
-  );
+  const updateActiveSection = () => {
+    ticking = false;
 
-  sections.forEach((section) => observer.observe(section));
+    const anchorOffset = document.body.dataset.pageKind === "case"
+      ? Math.min(window.innerHeight * 0.32, 260)
+      : Math.min(window.innerHeight * 0.28, 220);
+    const anchorY = window.scrollY + Math.max(120, anchorOffset);
+
+    let activeSectionId = sections[0].id;
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= anchorY) {
+        activeSectionId = section.id;
+      }
+    });
+
+    setActiveSection(activeSectionId);
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActiveSection);
+  };
+
+  elements.sectionLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveSection(link.dataset.sectionLink);
+      window.requestAnimationFrame(updateActiveSection);
+    });
+  });
+
+  updateActiveSection();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("load", updateActiveSection);
+  window.addEventListener("hashchange", updateActiveSection);
 }
 
 function syncUiState() {

@@ -506,11 +506,15 @@ body[data-page-kind="case"] .top-meta {
   padding-bottom: 8px;
 }
 
+body[data-page-kind="case"]::after {
+  display: none;
+}
+
 body[data-page-kind="case"] #main-content::before {
   content: "";
   display: block;
   width: 100%;
-  height: 72px;
+  height: 56px;
   opacity: 0;
   pointer-events: none;
 }
@@ -522,8 +526,31 @@ body[data-page-kind="case"] .meta-copy {
   text-align: center;
 }
 
+body[data-page-kind="case"] .top-meta__stack {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
 body[data-page-kind="case"] .meta-home {
   justify-self: center;
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+  gap: 10px;
+}
+
+body[data-page-kind="case"] .meta-copy {
+  display: none;
 }
 
 .meta-home {
@@ -831,6 +858,10 @@ body[data-page="home"] .page-hero__nameplate {
   justify-content: center;
   min-height: 224px;
   width: max-content;
+}
+
+.page-hero__portrait-mobile {
+  display: none;
 }
 
 .hero-word {
@@ -2268,6 +2299,26 @@ body[data-case="transitun"] .case-outcome-card--wide p {
     align-items: center;
   }
 
+  .page-hero__portrait-mobile {
+    order: -1;
+    display: block;
+    width: 92px;
+    height: 92px;
+    margin: 0 0 14px;
+    padding: 4px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: var(--surface-solid);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+  }
+
+  .page-hero__portrait-mobile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    object-fit: cover;
+  }
+
   .hero-word {
     position: static;
     left: auto;
@@ -2632,17 +2683,21 @@ body[data-case="transitun"] .case-outcome-card--wide p {
     top: 10px;
     z-index: 50;
     margin-top: 14px;
-    margin-bottom: 20px;
-    width: min(calc(100vw - 24px), 352px);
+    margin-bottom: 16px;
+    width: auto;
+    padding: 0;
     justify-content: center;
     align-items: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   body[data-page-kind="case"] .top-meta__stack,
   body[data-page-kind="case"] .meta-copy {
-    width: 100%;
-    justify-items: center;
-    text-align: center;
+    width: auto;
   }
 
   body[data-page-kind="case"] .meta-home {
