@@ -1,0 +1,21 @@
+{
+  "owner": "Jay Hamdi / Jay Studio",
+  "updated": "2026-08-17",
+  "creative": [
+    { "project": "AUREA / Beyond Ordinary", "source": "jaystudio.cc", "video": "creative/aurea/reveal.mp4", "poster": "creative/aurea/cover.jpg", "stills": ["creative/aurea/event-01.jpg", "creative/aurea/event-02.jpg"], "moodboard": "creative/aurea/moodboard.png" },
+    { "project": "DELISHIO / Taste the Cold", "source": "jaystudio.cc", "video": "creative/delishio/film.mp4", "poster": "creative/delishio/cover.jpg" },
+    { "project": "Sidi Bou Said / The Blue Story", "source": "jaystudio.cc", "video": "creative/sidi-bou-said/film.mp4", "poster": "creative/sidi-bou-said/cover.jpg" }
+  ],
+  "product": [
+    { "project": "FORVIA / Palantir Apps", "source": "existing portfolio archive", "directory": "images/pdf-forvia" },
+    { "project": "Biometric Kiosk Interface", "source": "existing portfolio archive", "directory": "images/pdf-biokiosk" },
+    { "project": "Smart Web Pay", "source": "existing portfolio archive", "directory": "images/pdf-smartwebpay" },
+    { "project": "Transitun", "source": "existing portfolio archive", "directory": "images" }
+  ],
+  "documents": [
+    { "name": "Updated art director resume", "file": "HAMDI-JAWHER-ART-DIRECTOR-RESUME.pdf" }
+  ],
+  "generated": [
+    { "name": "Portfolio social preview", "file": "og.jpg", "usage": "Open Graph and social sharing only", "note": "AI-generated editorial composition; not presented as client work" }
+  ]
+}
