@@ -1767,8 +1767,20 @@ body.is-safari .hero-v2__copy h1 {
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
 }
-body.is-safari .cursor-dot,
-body.is-safari .hover-preview { display: none; }
+@media (pointer: fine) {
+  body.is-safari .cursor-dot {
+    display: block;
+    background: #0a0a0a;
+    mix-blend-mode: normal;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.55);
+  }
+  body.is-safari .cursor-dot.is-active { background: #0a0a0a; }
+  body.is-safari .cursor-dot.is-active span { color: #fff; }
+  body.is-safari .hover-preview {
+    display: block;
+    transition: opacity 240ms ease;
+  }
+}
 body.is-safari.home-v3 .work-track,
 body.is-safari.home-v3 .work-panel { transform-style: flat; }
 body.is-safari.home-v3 .work-panel { will-change: auto; }

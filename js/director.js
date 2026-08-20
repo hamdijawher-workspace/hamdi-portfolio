@@ -82,17 +82,35 @@
   menuButton?.addEventListener("click", () => setMenu(!mobileMenu?.classList.contains("is-open")));
   mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
 
-  if (!reduced && !isSafari && cursor && matchMedia("(pointer:fine)").matches) {
+  if (!reduced && cursor && matchMedia("(pointer:fine)").matches) {
     let pointerX = -40;
     let pointerY = -40;
     let cursorX = -40;
     let cursorY = -40;
     let previewX = -500;
     let previewY = -500;
+    let pointerFrame = 0;
+
+    const paintPointer = () => {
+      cursor.style.transform = `translate3d(${cursorX - cursor.offsetWidth / 2}px,${cursorY - cursor.offsetHeight / 2}px,0)`;
+      if (hoverPreview) hoverPreview.style.transform = `translate3d(${previewX}px,${previewY}px,0) scale(${hoverPreview.classList.contains("is-visible") ? 1 : .86}) rotate(-2deg)`;
+    };
 
     addEventListener("pointermove", (event) => {
       pointerX = event.clientX;
       pointerY = event.clientY;
+      if (isSafari) {
+        cursorX = pointerX;
+        cursorY = pointerY;
+        previewX = pointerX + 28;
+        previewY = pointerY + 28;
+        if (!pointerFrame) {
+          pointerFrame = requestAnimationFrame(() => {
+            pointerFrame = 0;
+            paintPointer();
+          });
+        }
+      }
     }, { passive: true });
 
     const renderPointer = () => {
@@ -100,11 +118,10 @@
       cursorY += (pointerY - cursorY) * .24;
       previewX += (pointerX + 28 - previewX) * .12;
       previewY += (pointerY + 28 - previewY) * .12;
-      cursor.style.transform = `translate3d(${cursorX - cursor.offsetWidth / 2}px,${cursorY - cursor.offsetHeight / 2}px,0)`;
-      if (hoverPreview) hoverPreview.style.transform = `translate3d(${previewX}px,${previewY}px,0) scale(${hoverPreview.classList.contains("is-visible") ? 1 : .86}) rotate(-2deg)`;
+      paintPointer();
       requestAnimationFrame(renderPointer);
     };
-    requestAnimationFrame(renderPointer);
+    if (!isSafari) requestAnimationFrame(renderPointer);
 
     document.querySelectorAll("a, button, [data-cursor-label]").forEach((target) => {
       target.addEventListener("pointerenter", () => {
