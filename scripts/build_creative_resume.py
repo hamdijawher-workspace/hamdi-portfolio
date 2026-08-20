@@ -5,6 +5,8 @@ from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     BaseDocTemplate,
     Frame,
@@ -22,11 +24,26 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "Jawher_Hamdi_Creative_Resume.pdf"
 ASSET_COPY = ROOT / "assets" / "Jawher_Hamdi_Creative_Resume.pdf"
+FONT_DIR = ROOT / "assets" / "fonts" / "montserrat"
 
 INK = colors.HexColor("#111111")
 MUTED = colors.HexColor("#4C4C4C")
 RULE = colors.HexColor("#111111")
 LIGHT_RULE = colors.HexColor("#B8B8B8")
+
+
+def register_fonts():
+    pdfmetrics.registerFont(TTFont("Montserrat", str(FONT_DIR / "Montserrat-Regular.ttf")))
+    pdfmetrics.registerFont(TTFont("Montserrat-SemiBold", str(FONT_DIR / "Montserrat-SemiBold.ttf")))
+    pdfmetrics.registerFont(TTFont("Montserrat-Bold", str(FONT_DIR / "Montserrat-Bold.ttf")))
+    pdfmetrics.registerFont(TTFont("Montserrat-Italic", str(FONT_DIR / "Montserrat-Italic.ttf")))
+    pdfmetrics.registerFontFamily(
+        "Montserrat",
+        normal="Montserrat",
+        bold="Montserrat-Bold",
+        italic="Montserrat-Italic",
+        boldItalic="Montserrat-Bold",
+    )
 
 
 def draw_page(canvas, doc):
@@ -36,7 +53,7 @@ def draw_page(canvas, doc):
     canvas.setLineWidth(0.35)
     canvas.line(18 * mm, 13.5 * mm, width - 18 * mm, 13.5 * mm)
     canvas.setFillColor(MUTED)
-    canvas.setFont("Times-Roman", 7.5)
+    canvas.setFont("Montserrat", 7.2)
     canvas.drawString(18 * mm, 9.5 * mm, "JAWHER HAMDI")
     canvas.drawRightString(width - 18 * mm, 9.5 * mm, f"PAGE {doc.page} OF 2")
     canvas.restoreState()
@@ -46,51 +63,51 @@ def make_styles():
     base = getSampleStyleSheet()
     return {
         "name": ParagraphStyle(
-            "Name", parent=base["Normal"], fontName="Times-Bold", fontSize=20,
+            "Name", parent=base["Normal"], fontName="Montserrat-Bold", fontSize=20,
             leading=22, alignment=TA_CENTER, textColor=INK, spaceAfter=3,
         ),
         "headline": ParagraphStyle(
-            "Headline", parent=base["Normal"], fontName="Times-Bold", fontSize=9.5,
+            "Headline", parent=base["Normal"], fontName="Montserrat-SemiBold", fontSize=9.2,
             leading=11, alignment=TA_CENTER, tracking=0.45, textColor=INK, spaceAfter=4,
         ),
         "contact": ParagraphStyle(
-            "Contact", parent=base["Normal"], fontName="Times-Roman", fontSize=8.6,
+            "Contact", parent=base["Normal"], fontName="Montserrat", fontSize=8.2,
             leading=10.6, alignment=TA_CENTER, textColor=INK,
         ),
         "section": ParagraphStyle(
-            "Section", parent=base["Normal"], fontName="Times-Bold", fontSize=10.6,
+            "Section", parent=base["Normal"], fontName="Montserrat-Bold", fontSize=10.2,
             leading=12, tracking=0.55, textColor=INK, spaceBefore=9, spaceAfter=2,
         ),
         "summary": ParagraphStyle(
-            "Summary", parent=base["Normal"], fontName="Times-Roman", fontSize=9.8,
+            "Summary", parent=base["Normal"], fontName="Montserrat", fontSize=9.2,
             leading=12.5, textColor=INK, spaceAfter=2,
         ),
         "organization": ParagraphStyle(
-            "Organization", parent=base["Normal"], fontName="Times-Bold", fontSize=10,
+            "Organization", parent=base["Normal"], fontName="Montserrat-SemiBold", fontSize=9.4,
             leading=11.5, textColor=INK,
         ),
         "date": ParagraphStyle(
-            "Date", parent=base["Normal"], fontName="Times-Roman", fontSize=9.2,
+            "Date", parent=base["Normal"], fontName="Montserrat", fontSize=8.6,
             leading=11, alignment=TA_RIGHT, textColor=INK,
         ),
         "role": ParagraphStyle(
-            "Role", parent=base["Normal"], fontName="Times-Italic", fontSize=9.6,
+            "Role", parent=base["Normal"], fontName="Montserrat-Italic", fontSize=9,
             leading=11.3, textColor=INK, spaceAfter=2.2,
         ),
         "bullet": ParagraphStyle(
-            "Bullet", parent=base["Normal"], fontName="Times-Roman", fontSize=9.4,
+            "Bullet", parent=base["Normal"], fontName="Montserrat", fontSize=8.8,
             leading=12.1, leftIndent=9, firstLineIndent=-7, textColor=INK, spaceAfter=2.7,
         ),
         "project": ParagraphStyle(
-            "Project", parent=base["Normal"], fontName="Times-Bold", fontSize=9.8,
+            "Project", parent=base["Normal"], fontName="Montserrat-SemiBold", fontSize=9.2,
             leading=11.4, textColor=INK, spaceAfter=1.2,
         ),
         "detail": ParagraphStyle(
-            "Detail", parent=base["Normal"], fontName="Times-Roman", fontSize=9.4,
+            "Detail", parent=base["Normal"], fontName="Montserrat", fontSize=8.8,
             leading=12.1, textColor=INK, spaceAfter=4,
         ),
         "skills": ParagraphStyle(
-            "Skills", parent=base["Normal"], fontName="Times-Roman", fontSize=9.4,
+            "Skills", parent=base["Normal"], fontName="Montserrat", fontSize=8.8,
             leading=12.2, textColor=INK, spaceAfter=2,
         ),
     }
@@ -131,6 +148,7 @@ def add_experience(story, organization, date, role, bullets, styles):
 
 def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    register_fonts()
     styles = make_styles()
     doc = BaseDocTemplate(
         str(OUTPUT), pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm,
