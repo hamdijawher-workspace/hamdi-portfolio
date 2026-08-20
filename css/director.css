@@ -1753,3 +1753,24 @@ body.menu-open .site-header--unified { color: #fff; background: transparent; bor
   .case-pagination__link + .case-pagination__link { border-top: 1px solid #2d2d2d; border-left: 0; }
   .case-pagination__link h2 { margin-top: 32px; font-size: clamp(1.8rem, 9vw, 3rem); }
 }
+
+/* Safari keeps the same editorial composition with a cheaper compositing path. */
+body.is-safari .grain {
+  inset: -12%;
+  animation: none;
+  transform: translate3d(0, 0, 0);
+}
+body.is-safari .site-header,
+body.is-safari .site-header--unified,
+body.is-safari .site-header--frame,
+body.is-safari .hero-v2__copy h1 {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+body.is-safari .cursor-dot,
+body.is-safari .hover-preview { display: none; }
+body.is-safari.home-v3 .work-track,
+body.is-safari.home-v3 .work-panel { transform-style: flat; }
+body.is-safari.home-v3 .work-panel { will-change: auto; }
+body.is-safari.home-v3 .work-panel__media img,
+body.is-safari.home-v3 .work-panel__media video { backface-visibility: hidden; }

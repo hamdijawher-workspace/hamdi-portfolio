@@ -1,6 +1,7 @@
 (() => {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const body = document.body;
+  const isSafari = /Safari/i.test(navigator.userAgent) && !/(Chrome|Chromium|CriOS|Edg|OPR|FxiOS)/i.test(navigator.userAgent);
   const header = document.querySelector(".site-header");
   const progress = document.querySelector(".site-progress");
   const menuButton = document.querySelector(".menu-toggle");
@@ -15,6 +16,7 @@
   const hoverPreview = document.querySelector(".hover-preview");
   let lastFocus = null;
 
+  body.classList.toggle("is-safari", isSafari);
   body.classList.add("is-ready");
 
   if (body.classList.contains("home-v3")) {
@@ -54,7 +56,15 @@
     if (progress) progress.style.width = `${amount}%`;
     header?.classList.toggle("is-scrolled", scrollY > 32);
   };
-  addEventListener("scroll", updateChrome, { passive: true });
+  let chromeFrame = 0;
+  const requestChromeUpdate = () => {
+    if (chromeFrame) return;
+    chromeFrame = requestAnimationFrame(() => {
+      chromeFrame = 0;
+      updateChrome();
+    });
+  };
+  addEventListener("scroll", requestChromeUpdate, { passive: true });
   updateChrome();
 
   const setMenu = (open) => {
@@ -72,7 +82,7 @@
   menuButton?.addEventListener("click", () => setMenu(!mobileMenu?.classList.contains("is-open")));
   mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
 
-  if (!reduced && cursor && matchMedia("(pointer:fine)").matches) {
+  if (!reduced && !isSafari && cursor && matchMedia("(pointer:fine)").matches) {
     let pointerX = -40;
     let pointerY = -40;
     let cursorX = -40;
@@ -182,6 +192,9 @@
     });
   }, { threshold: 0.35 });
   videos.forEach((video) => videoObserver.observe(video));
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) videos.forEach((video) => video.pause());
+  });
 
   document.querySelectorAll("[data-filter]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -225,7 +238,7 @@
     }
   });
 
-  if (!reduced && window.Lenis) {
+  if (!reduced && !isSafari && window.Lenis) {
     const lenis = new Lenis({ duration: 1.05, smoothWheel: true, wheelMultiplier: 0.9 });
     const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
@@ -242,6 +255,7 @@
 
   if (!reduced && window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
     const narrativeHero = document.querySelector(".hero-v2");
     const legacyHero = document.querySelector(".hero");
     if (narrativeHero) {
@@ -286,7 +300,7 @@
         const yPositions = [.12, -.08, .17, -.11, .09];
         const rotations = [-1.6, 1.1, -.8, 1.3, -1.1];
 
-        gsap.set(workTrack, { transformStyle: "preserve-3d" });
+        gsap.set(workTrack, { transformStyle: isSafari ? "flat" : "preserve-3d" });
         panels.forEach((panel, index) => {
           panel.style.zIndex = String(index + 1);
           gsap.set(panel, {
@@ -294,8 +308,8 @@
             yPercent: -50,
             x: 0,
             y: 0,
-            z: -900 - index * 90,
-            scale: .72,
+            z: isSafari ? 0 : -900 - index * 90,
+            scale: isSafari ? .56 : .72,
             rotationZ: 0,
             opacity: 0,
             transformOrigin: "50% 50%"

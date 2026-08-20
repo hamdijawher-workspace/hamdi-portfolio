@@ -26,11 +26,11 @@ OUTPUT = ROOT / "output" / "pdf" / "Jawher_Hamdi_Creative_Resume.pdf"
 ASSET_COPY = ROOT / "assets" / "Jawher_Hamdi_Creative_Resume.pdf"
 FONT_PATH = ROOT / "assets" / "fonts" / "PPNeueMontreal-Medium.woff2"
 
-INK = colors.HexColor("#161A1D")
-BLUE = colors.HexColor("#2648D8")
-MUTED = colors.HexColor("#5E6268")
-RULE = colors.HexColor("#D9DCE1")
-PAPER = colors.HexColor("#F7F6F2")
+INK = colors.HexColor("#1D1D1B")
+BLUE = colors.HexColor("#6F665B")
+MUTED = colors.HexColor("#6A6761")
+RULE = colors.HexColor("#D8D2C8")
+PAPER = colors.HexColor("#FAF9F6")
 
 
 def register_fonts():
@@ -47,12 +47,12 @@ def draw_page(canvas, doc):
     width, height = A4
     canvas.setFillColor(PAPER)
     canvas.rect(0, 0, width, height, stroke=0, fill=1)
-    canvas.setFillColor(BLUE)
-    canvas.rect(0, height - 8 * mm, width, 8 * mm, stroke=0, fill=1)
+    canvas.setFillColor(INK)
+    canvas.rect(0, height - 3 * mm, width, 3 * mm, stroke=0, fill=1)
     canvas.setFillColor(MUTED)
     canvas.setFont("Helvetica", 7)
-    canvas.drawString(18 * mm, 9 * mm, "JAWHER HAMDI / CREATIVE RESUME")
-    canvas.drawRightString(width - 18 * mm, 9 * mm, f"JAY HAMDI / 0{doc.page} OF 02")
+    canvas.drawString(20 * mm, 10 * mm, "JAWHER HAMDI / CREATIVE RESUME")
+    canvas.drawRightString(width - 20 * mm, 10 * mm, f"JAWHER HAMDI / 0{doc.page} OF 02")
     canvas.restoreState()
 
 
@@ -63,8 +63,8 @@ def make_styles(font_name):
             "Name",
             parent=styles["Normal"],
             fontName=font_name,
-            fontSize=30,
-            leading=31,
+            fontSize=29,
+            leading=30,
             textColor=INK,
             spaceAfter=2,
         ),
@@ -74,7 +74,7 @@ def make_styles(font_name):
             fontName="Helvetica-Bold",
             fontSize=10.5,
             leading=13,
-            tracking=0.7,
+            tracking=0.9,
             textColor=BLUE,
             spaceAfter=5,
         ),
@@ -173,7 +173,7 @@ def section_label(text, styles):
 
 
 def role_row(company, role, date, styles):
-    left = Paragraph(f"{role}<br/><font color='#5E6268'>{company}</font>", styles["role"])
+    left = Paragraph(f"{role}<br/><font color='#6A6761'>{company}</font>", styles["role"])
     right = Paragraph(date, styles["date"])
     table = Table([[left, right]], colWidths=[126 * mm, 43 * mm])
     table.setStyle(
@@ -198,10 +198,10 @@ def build():
     doc = BaseDocTemplate(
         str(OUTPUT),
         pagesize=A4,
-        leftMargin=18 * mm,
-        rightMargin=18 * mm,
-        topMargin=15 * mm,
-        bottomMargin=15 * mm,
+        leftMargin=20 * mm,
+        rightMargin=20 * mm,
+        topMargin=17 * mm,
+        bottomMargin=17 * mm,
         title="Jawher Hamdi - Creative Resume",
         author="Jawher Hamdi",
         subject="Art direction, creative production, and product design",
@@ -224,8 +224,8 @@ def build():
         Paragraph(
             "Tunis, Tunisia &nbsp; / &nbsp; Open to relocation and international remote work<br/>"
             "+216 22 085 367 &nbsp; / &nbsp; hamdijawher@icloud.com &nbsp; / &nbsp; "
-            "<link href='https://www.jawherhamdi.com/' color='#2648D8'>jawherhamdi.com</link> &nbsp; / &nbsp; "
-            "<link href='https://www.linkedin.com/in/jawher-hamdi-748349189/' color='#2648D8'>LinkedIn</link>",
+            "<link href='https://www.jawherhamdi.com/' color='#6F665B'>jawherhamdi.com</link> &nbsp; / &nbsp; "
+            "<link href='https://www.linkedin.com/in/jawher-hamdi-748349189/' color='#6F665B'>LinkedIn</link>",
             styles["contact"],
         ),
         Spacer(1, 5),
@@ -268,9 +268,6 @@ def build():
     ]:
         story.append(Paragraph(f"- {bullet}", styles["bullet"]))
 
-    story.append(PageBreak())
-    story.append(Paragraph("EXPERIENCE / CREATIVE RANGE", styles["page_kicker"]))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=BLUE, spaceAfter=8))
     story.append(role_row("Addinn Group", "UX/UI Product Designer | Creative & Marketing Design", "Oct 2020 - May 2023", styles))
     for bullet in [
         "Led discovery and product design across SynapseHR, Smart Web Pay, Lait's Collecte, and financial-service products using interviews, journey mapping, UX audits, prototyping, testing, analytics, and iteration.",
@@ -281,6 +278,9 @@ def build():
     ]:
         story.append(Paragraph(f"- {bullet}", styles["bullet"]))
 
+    story.append(PageBreak())
+    story.append(Paragraph("SELECTED WORK / CAPABILITIES", styles["page_kicker"]))
+    story.append(HRFlowable(width="100%", thickness=0.8, color=BLUE, spaceAfter=8))
     story += section_label("Selected creative and product work", styles)
     project_rows = [
         (
