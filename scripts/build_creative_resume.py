@@ -11,6 +11,8 @@ from reportlab.platypus import (
     BaseDocTemplate,
     Frame,
     HRFlowable,
+    KeepTogether,
+    PageBreak,
     PageTemplate,
     Paragraph,
     Spacer,
@@ -49,8 +51,8 @@ def draw_page(canvas, doc):
     canvas.rect(0, height - 8 * mm, width, 8 * mm, stroke=0, fill=1)
     canvas.setFillColor(MUTED)
     canvas.setFont("Helvetica", 7)
-    canvas.drawString(16 * mm, 9 * mm, "JAWHER HAMDI / CREATIVE RESUME")
-    canvas.drawRightString(width - 16 * mm, 9 * mm, "Portfolio identity: Jay Hamdi")
+    canvas.drawString(18 * mm, 9 * mm, "JAWHER HAMDI / CREATIVE RESUME")
+    canvas.drawRightString(width - 18 * mm, 9 * mm, f"JAY HAMDI / 0{doc.page} OF 02")
     canvas.restoreState()
 
 
@@ -61,8 +63,8 @@ def make_styles(font_name):
             "Name",
             parent=styles["Normal"],
             fontName=font_name,
-            fontSize=26,
-            leading=27,
+            fontSize=30,
+            leading=31,
             textColor=INK,
             spaceAfter=2,
         ),
@@ -70,8 +72,8 @@ def make_styles(font_name):
             "Title",
             parent=styles["Normal"],
             fontName="Helvetica-Bold",
-            fontSize=9.5,
-            leading=12,
+            fontSize=10.5,
+            leading=13,
             tracking=0.7,
             textColor=BLUE,
             spaceAfter=5,
@@ -80,27 +82,27 @@ def make_styles(font_name):
             "Contact",
             parent=styles["Normal"],
             fontName="Helvetica",
-            fontSize=7.7,
-            leading=10,
+            fontSize=8.2,
+            leading=10.5,
             textColor=MUTED,
         ),
         "section": ParagraphStyle(
             "Section",
             parent=styles["Normal"],
             fontName="Helvetica-Bold",
-            fontSize=8.2,
-            leading=10,
+            fontSize=8.6,
+            leading=10.5,
             tracking=1.1,
             textColor=BLUE,
-            spaceBefore=5,
+            spaceBefore=10,
             spaceAfter=3,
         ),
         "body": ParagraphStyle(
             "Body",
             parent=styles["Normal"],
             fontName="Helvetica",
-            fontSize=8.25,
-            leading=10.6,
+            fontSize=9,
+            leading=12,
             textColor=INK,
             spaceAfter=2,
         ),
@@ -108,16 +110,16 @@ def make_styles(font_name):
             "Role",
             parent=styles["Normal"],
             fontName="Helvetica-Bold",
-            fontSize=8.65,
-            leading=10.4,
+            fontSize=9.4,
+            leading=11.8,
             textColor=INK,
         ),
         "date": ParagraphStyle(
             "Date",
             parent=styles["Normal"],
             fontName="Helvetica",
-            fontSize=7.5,
-            leading=9.5,
+            fontSize=8,
+            leading=10,
             alignment=TA_RIGHT,
             textColor=MUTED,
         ),
@@ -125,21 +127,40 @@ def make_styles(font_name):
             "Bullet",
             parent=styles["Normal"],
             fontName="Helvetica",
-            fontSize=8.05,
-            leading=10.3,
+            fontSize=8.8,
+            leading=11.8,
             leftIndent=8,
             firstLineIndent=-7,
             bulletIndent=0,
             textColor=INK,
-            spaceAfter=1.2,
+            spaceAfter=3,
         ),
         "small": ParagraphStyle(
             "Small",
             parent=styles["Normal"],
             fontName="Helvetica",
-            fontSize=7.65,
-            leading=9.7,
+            fontSize=8.4,
+            leading=11.2,
             textColor=INK,
+        ),
+        "project": ParagraphStyle(
+            "Project",
+            parent=styles["Normal"],
+            fontName="Helvetica-Bold",
+            fontSize=9.4,
+            leading=11.6,
+            textColor=INK,
+            spaceAfter=1,
+        ),
+        "page_kicker": ParagraphStyle(
+            "PageKicker",
+            parent=styles["Normal"],
+            fontName="Helvetica-Bold",
+            fontSize=8.5,
+            leading=10,
+            tracking=1.2,
+            textColor=BLUE,
+            spaceAfter=4,
         ),
     }
 
@@ -154,7 +175,7 @@ def section_label(text, styles):
 def role_row(company, role, date, styles):
     left = Paragraph(f"{role}<br/><font color='#5E6268'>{company}</font>", styles["role"])
     right = Paragraph(date, styles["date"])
-    table = Table([[left, right]], colWidths=[131 * mm, 38 * mm])
+    table = Table([[left, right]], colWidths=[126 * mm, 43 * mm])
     table.setStyle(
         TableStyle(
             [
@@ -177,11 +198,11 @@ def build():
     doc = BaseDocTemplate(
         str(OUTPUT),
         pagesize=A4,
-        leftMargin=16 * mm,
-        rightMargin=16 * mm,
-        topMargin=14 * mm,
+        leftMargin=18 * mm,
+        rightMargin=18 * mm,
+        topMargin=15 * mm,
         bottomMargin=15 * mm,
-        title="Jawher Hamdi — Creative Resume",
+        title="Jawher Hamdi - Creative Resume",
         author="Jawher Hamdi",
         subject="Art direction, creative production, and product design",
     )
@@ -199,66 +220,115 @@ def build():
 
     story = [
         Paragraph("JAWHER HAMDI", styles["name"]),
-        Paragraph("ART DIRECTION / CREATIVE PRODUCTION / PRODUCT DESIGN", styles["title"]),
+        Paragraph("ART DIRECTION / CREATIVE PRODUCTION / PRODUCT & VISUAL DESIGN", styles["title"]),
         Paragraph(
-            "Tunis, Tunisia · Open to relocation and international remote work<br/>"
-            "+216 22 085 367 · hamdijawher@icloud.com · "
-            "<link href='https://www.jawherhamdi.com/' color='#2648D8'>jawherhamdi.com</link> · "
+            "Tunis, Tunisia &nbsp; / &nbsp; Open to relocation and international remote work<br/>"
+            "+216 22 085 367 &nbsp; / &nbsp; hamdijawher@icloud.com &nbsp; / &nbsp; "
+            "<link href='https://www.jawherhamdi.com/' color='#2648D8'>jawherhamdi.com</link> &nbsp; / &nbsp; "
             "<link href='https://www.linkedin.com/in/jawher-hamdi-748349189/' color='#2648D8'>LinkedIn</link>",
             styles["contact"],
         ),
-        Spacer(1, 3),
+        Spacer(1, 5),
     ]
 
     story += section_label("Profile", styles)
     story.append(
         Paragraph(
-            "Multidisciplinary designer with five years of experience in product and experience design, now building an independent practice across art direction and creative production. I connect audience insight, visual storytelling, production planning, and systems thinking to carry an idea from concept to final frame or interface.",
+            "Multidisciplinary designer with 5+ years leading work across enterprise data products, financial services, design systems, marketing design, campaigns, presentations, film, and photography. I connect art direction with product rigor: defining the central idea, aligning people around it, and carrying it through visual language, production, interface, and delivery.",
             styles["body"],
         )
     )
 
-    story += section_label("Creative practice", styles)
-    story.append(role_row("Jay Studio / Independent practice", "Founder / Art Direction & Creative Production", "2026—Present", styles))
-    for bullet in [
-        "Develop concepts, treatments, moodboards, storyboards, shot lists, and visual systems for film, photography, social content, and digital experiences.",
-        "Plan and direct small productions from pre-production through shoot decisions, edit feedback, and delivery review.",
-        "Selected independent work: AUREA / Beyond Ordinary, DELISHIO / Taste the Cold, and Sidi Bou Said / The Blue Story.",
-    ]:
-        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
-
-    story += section_label("Product & experience design", styles)
-    story.append(role_row("FORVIA Faurecia / Palantir Foundry", "UX/UI Designer", "May 2023—Jun 2025", styles))
-    for bullet in [
-        "Designed data-heavy enterprise dashboards and use cases, turning complex operational workflows into clearer decision-making experiences.",
-        "Built and documented reusable design-system patterns for designers and developers; conducted UX audits and facilitated an R&amp;D ideation workshop in Paris-Nanterre.",
-    ]:
-        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
-    story.append(Spacer(1, 2))
-    story.append(role_row("Addinn Group", "UX/UI Product Designer", "Oct 2020—May 2023", styles))
-    for bullet in [
-        "Led discovery and product design across HR, agriculture, and financial products through interviews, journey mapping, prototyping, testing, and iteration.",
-        "Translated ambiguous requirements into buildable product direction while balancing user needs, business goals, and technical constraints.",
-    ]:
-        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
-
-    story += section_label("Capabilities", styles)
+    story += section_label("Creative and design leadership", styles)
     story.append(
         Paragraph(
-            "<b>Direction:</b> concepts, campaign thinking, visual language, treatments, moodboards, storyboards, references, quality control &nbsp;&nbsp; "
-            "<b>Production:</b> shot planning, location and prop direction, on-set decisions, edit feedback, rollout assets<br/>"
-            "<b>Design:</b> visual design, UX/UI, prototyping, design systems, accessibility, user journeys &nbsp;&nbsp; "
-            "<b>Research:</b> interviews, workshops, UX audits, journey mapping, usability testing",
+            "Concept development / art direction / campaign systems / team leadership / workshop facilitation / product strategy / data UX / design systems / visual storytelling / photo and video production / executive presentations",
             styles["small"],
         )
     )
 
-    story += section_label("Education, tools & languages", styles)
+    story += section_label("Creative practice", styles)
+    story.append(role_row("Jay Studio / Independent practice", "Founder / Art Direction & Creative Production", "2026 - Present", styles))
+    for bullet in [
+        "Build creative territories from audience insight and positioning, translating the central idea into treatments, moodboards, storyboards, shot lists, campaign systems, and digital touchpoints.",
+        "Direct small film and photography productions from pre-production and visual planning through on-set decisions, edit feedback, post-production, and rollout review.",
+        "Shape collaborators around the work, setting the creative standard while coordinating design, image, motion, styling, and production needs.",
+        "Selected independent work includes AUREA / Beyond Ordinary and Sidi Bou Said / The Blue Story.",
+    ]:
+        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
+
+    story += section_label("Experience", styles)
+    story.append(role_row("FORVIA Faurecia / Palantir Foundry", "UX/UI Designer | Data UX & Design Process Leadership", "May 2023 - Jun 2025", styles))
+    for bullet in [
+        "Led the end-to-end design process for data-heavy enterprise applications, from discovery, workflow mapping, UX audits, and ideation through prototypes, interface direction, specification, and developer handoff.",
+        "Created and governed a reusable design system for Palantir Foundry applications, aligning foundations, components, dashboard patterns, documentation, and design review across teams.",
+        "Led designers through critique, prioritization, and quality review while aligning product owners, technical teams, and stakeholders around a coherent experience direction.",
+        "Designed and facilitated R&amp;D brainstorming workshops in Paris Bercy and Nanterre, turning complex innovation topics into structured concepts, scenarios, and next steps.",
+        "Extended the work beyond product screens through presentations, photo and video content, and campaign-style storytelling for innovation and internal communication.",
+    ]:
+        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
+
+    story.append(PageBreak())
+    story.append(Paragraph("EXPERIENCE / CREATIVE RANGE", styles["page_kicker"]))
+    story.append(HRFlowable(width="100%", thickness=0.8, color=BLUE, spaceAfter=8))
+    story.append(role_row("Addinn Group", "UX/UI Product Designer | Creative & Marketing Design", "Oct 2020 - May 2023", styles))
+    for bullet in [
+        "Led discovery and product design across SynapseHR, Smart Web Pay, Lait's Collecte, and financial-service products using interviews, journey mapping, UX audits, prototyping, testing, analytics, and iteration.",
+        "Worked across marketing design and art direction, shaping campaign visuals, presentations, sales and communication materials, and photo and video content alongside the product work.",
+        "Led designers and set visual quality across interface, marketing, and communication touchpoints, keeping the product and brand story coherent from concept through delivery.",
+        "Translated ambiguous business and technical requirements into clear product direction while presenting recommendations to stakeholders and product owners.",
+        "Used behavioral evidence and closed-beta feedback to refine critical financial flows around clarity, security, recovery, and user confidence.",
+    ]:
+        story.append(Paragraph(f"- {bullet}", styles["bullet"]))
+
+    story += section_label("Selected creative and product work", styles)
+    project_rows = [
+        (
+            "AUREA / BEYOND ORDINARY",
+            "Independent hospitality campaign study - Creative and art direction, treatment, film, photography, newspaper concept, and social rollout.",
+        ),
+        (
+            "FORVIA / PALANTIR APPS",
+            "Enterprise data experience - Design-process leadership, UX audits, reusable design system, dashboard direction, R&amp;D workshops, and innovation storytelling.",
+        ),
+        (
+            "SMART WEB PAY",
+            "Parking-payment service - Research, product strategy, experience direction, visual design, testing, and a scalable service-system foundation.",
+        ),
+        (
+            "SIDI BOU SAID / THE BLUE STORY",
+            "Independent destination film - Concept, visual direction, location study, production, edit direction, and a place-led narrative built through rhythm and detail.",
+        ),
+    ]
+    for project, description in project_rows:
+        story.append(
+            KeepTogether(
+                [
+                    Paragraph(project, styles["project"]),
+                    Paragraph(description, styles["body"]),
+                    Spacer(1, 2),
+                ]
+            )
+        )
+
+    story += section_label("Capabilities", styles)
     story.append(
         Paragraph(
-            "<b>Bachelor's degree in Design</b> — Higher Institute of Arts and Multimedia of Manouba (ISAMM)<br/>"
-            "<b>Tools:</b> Figma, Photoshop, Illustrator, InDesign, DaVinci Resolve, Final Cut Pro, Keynote, Miro, Palantir Foundry, HTML/CSS<br/>"
-            "<b>Languages:</b> English (C2) · French (B2)",
+            "<b>Art direction:</b> concepts, campaign worlds, visual language, treatments, moodboards, storyboards, references, visual quality control<br/>"
+            "<b>Creative production:</b> photo and video planning, shot lists, locations, props, on-set decisions, edit feedback, presentation and rollout assets<br/>"
+            "<b>Product and visual design:</b> data UX, interaction design, prototyping, design systems, accessibility, dashboards, service journeys<br/>"
+            "<b>Leadership and strategy:</b> team direction, critique, stakeholder alignment, workshops, research, UX audits, product definition, presentations",
+            styles["small"],
+        )
+    )
+
+    story += section_label("Education, credentials, tools & languages", styles)
+    story.append(
+        Paragraph(
+            "<b>Bachelor's degree in Design</b> - Higher Institute of Arts and Multimedia of Manouba (ISAMM)<br/>"
+            "<b>Credentials:</b> Google UX Design Certificate / Meta Principles of UX/UI Design / IE Business School Branding and Customer Experience<br/>"
+            "<b>Tools:</b> Figma / Photoshop / Illustrator / InDesign / DaVinci Resolve / Final Cut Pro / Keynote / PowerPoint / Miro / Palantir Foundry / HTML and CSS<br/>"
+            "<b>Languages:</b> English C2 / French B2",
             styles["small"],
         )
     )
