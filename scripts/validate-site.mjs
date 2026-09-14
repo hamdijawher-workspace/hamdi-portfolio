@@ -5,7 +5,7 @@ const root = resolve(import.meta.dirname, "..");
 const files = [];
 const walk = (dir) => {
   for (const name of readdirSync(dir)) {
-    if ([".git", "node_modules"].includes(name)) continue;
+    if ([".git", "node_modules", "tmp", "output", ".vercel"].includes(name)) continue;
     const path = join(dir, name);
     if (statSync(path).isDirectory()) walk(path);
     else files.push(path);

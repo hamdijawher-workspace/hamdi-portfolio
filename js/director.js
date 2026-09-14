@@ -213,15 +213,26 @@
     if (document.hidden) videos.forEach((video) => video.pause());
   });
 
-  document.querySelectorAll("[data-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const value = button.dataset.filter;
-      document.querySelectorAll("[data-filter]").forEach((item) => item.classList.toggle("is-active", item === button));
-      document.querySelectorAll("[data-category]").forEach((card) => {
-        card.hidden = value !== "all" && !card.dataset.category.split(" ").includes(value);
-      });
+  const filterButtons = [...document.querySelectorAll("[data-filter]")];
+  const applyWorkFilter = (value, updateUrl = false) => {
+    const allowed = filterButtons.some((button) => button.dataset.filter === value) ? value : "all";
+    filterButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.filter === allowed));
+    document.querySelectorAll("[data-category]").forEach((card) => {
+      card.hidden = allowed !== "all" && !card.dataset.category.split(" ").includes(allowed);
     });
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (allowed === "all") url.searchParams.delete("filter");
+      else url.searchParams.set("filter", allowed);
+      window.history.replaceState({}, "", url);
+    }
+  };
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => applyWorkFilter(button.dataset.filter || "all", true));
   });
+  if (filterButtons.length) {
+    applyWorkFilter(new URLSearchParams(window.location.search).get("filter") || "all");
+  }
 
   const closeLightbox = () => {
     if (!lightbox) return;
@@ -313,8 +324,8 @@
     if (workTrack && workWrap && matchMedia("(min-width:901px)").matches) {
       if (body.classList.contains("home-v3")) {
         const panels = gsap.utils.toArray(".work-panel");
-        const xPositions = [-.35, -.17, .01, .19, .36];
-        const yPositions = [.12, -.08, .17, -.11, .09];
+        const xPositions = [-.30, -.10, .12, .31];
+        const yPositions = [.10, -.10, .12, -.08];
         const rotations = [-1.6, 1.1, -.8, 1.3, -1.1];
 
         gsap.set(workTrack, { transformStyle: isSafari ? "flat" : "preserve-3d" });
@@ -343,7 +354,7 @@
           }
         });
         panels.forEach((panel, index) => {
-          const revealAt = .03 + index * .16;
+          const revealAt = .03 + index * .19;
           depthTimeline.to(panel, { z: 0, scale: 1, opacity: 1, duration: .11, ease: "power2.out" }, revealAt);
           depthTimeline.to(panel, {
             x: () => innerWidth * xPositions[index],
@@ -467,7 +478,7 @@
       if (!media) return;
       gsap.to(media, { scale: 1, yPercent: -3, ease: "none", scrollTrigger: { trigger: scene, start: "top bottom", end: "bottom top", scrub: 0.6 } });
     });
-    gsap.utils.toArray(".case-hero__media img, .case-hero__media video").forEach((media) => {
+    gsap.utils.toArray("body:not(.product-case) .case-hero__media img, body:not(.product-case) .case-hero__media video").forEach((media) => {
       gsap.to(media, { scale: 1.08, yPercent: 5, ease: "none", scrollTrigger: { trigger: ".case-hero", start: "top top", end: "bottom top", scrub: 0.6 } });
     });
 
@@ -475,7 +486,7 @@
       gsap.from(".case-hero__meta > span", { y: 18, opacity: 0, stagger: .12, duration: .8, delay: .15, ease: "power3.out" });
       gsap.from(".case-hero h1", { yPercent: 24, opacity: 0, duration: 1.15, delay: .08, ease: "power3.out" });
       gsap.from(".case-hero__summary > *", { y: 26, opacity: 0, stagger: .12, duration: .9, delay: .32, ease: "power3.out" });
-      gsap.to(".case-hero__content", { yPercent: -13, opacity: .18, ease: "none", scrollTrigger: { trigger: ".case-hero", start: "38% top", end: "bottom top", scrub: .65 } });
+      gsap.to("body:not(.product-case) .case-hero__content", { yPercent: -13, opacity: .18, ease: "none", scrollTrigger: { trigger: ".case-hero", start: "38% top", end: "bottom top", scrub: .65 } });
 
       gsap.utils.toArray(".case-section").forEach((section) => {
         const heading = section.querySelector("h2");

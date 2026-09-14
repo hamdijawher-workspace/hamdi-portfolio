@@ -1785,3 +1785,58 @@ body.is-safari.home-v3 .work-panel { transform-style: flat; }
 body.is-safari.home-v3 .work-panel { will-change: auto; }
 body.is-safari.home-v3 .work-panel__media img,
 body.is-safari.home-v3 .work-panel__media video { backface-visibility: hidden; }
+
+/* Product portfolio — shared framing and readable case studies. */
+.desktop-nav .studio-button { border: 1px solid #d2d2d2; border-radius: 999px; padding: 10px 14px; }
+.hero-v2__note { flex-wrap: wrap; }
+.hero-v2__note span { white-space: nowrap; }
+.product-case { background: #fff; color: #111; }
+.product-case .case-hero { display: flex; flex-direction: column; min-height: 0; padding: 140px var(--page-x) 64px; gap: 48px; background: #fff; color: #111; }
+.product-case .case-hero__content { order: 0; padding: 0; }
+.product-case .case-hero__media { position: relative; inset: auto; order: 1; width: 100%; padding: clamp(16px,3vw,48px); background: #f3f3f1; border: 1px solid #e6e6e2; border-radius: 6px; }
+.product-case .case-hero__media::after { display: none; }
+.product-case .case-hero__media img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; transform: none !important; }
+.product-case .case-hero h1 { max-width: 15ch; font-size: clamp(3.4rem,7.6vw,8rem); line-height: .98; }
+.product-case .case-hero__summary { grid-template-columns: minmax(0, 2fr) minmax(0,1fr); align-items: start; gap: 40px; }
+.product-case .case-hero__summary p { max-width: 54ch; line-height: 1.5; }
+.product-case .case-hero__meta { color: #666; line-height: 1.5; }
+.product-case .case-section__content h2 { line-height: 1; }
+.product-case .case-section__content h3 { line-height: 1.18; }
+.product-case .case-detail { border-top: 1px solid #ddd; }
+.product-case .case-reason { display: grid; gap: 18px; }
+.product-case .case-section__content { gap: 36px; }
+.product-case .gallery figure { min-width: 0; }
+.product-case .gallery img { height: auto; object-fit: contain; }
+.product-case figcaption { font-size: 12px; line-height: 1.5; margin-top: 14px; opacity: .65; }
+.product-case .media-wide { padding: clamp(16px,3vw,40px); background: #f3f3f1; }
+.product-case .media-wide img { width: 100%; height: auto; max-height: 850px; object-fit: contain; }
+.work-index .work-tile__media { background: #f1f1ef; padding: 24px; }
+.work-index .work-tile__media img { object-fit: contain; }
+.site-footer { background: #fff; color: #111; border-color: #ddd; line-height: 1.7; }
+a:focus-visible, button:focus-visible { outline: 2px solid #2655ed; outline-offset: 5px; }
+@media (max-width:900px) {
+ .product-case .case-hero { padding-top: 115px; gap: 32px; }
+ .product-case .case-hero__summary { grid-template-columns: 1fr; gap: 16px; }
+ .product-case .case-hero__meta { flex-direction: column; gap: 6px; }
+ .product-case .case-section { padding-top: 70px; padding-bottom: 70px; }
+}
+@media (max-width:600px) {
+ .product-case .case-hero { padding: 110px var(--page-x) 36px; }
+ .product-case .case-hero h1 { font-size: clamp(2.8rem,12vw,4.5rem); }
+ .hero-v2__note { gap: 8px 14px; }
+ .site-footer div:nth-child(2) { display: block; text-align: left; }
+}
+.case-index { margin: 0 var(--page-x); padding: 24px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: 16px 28px; }
+.case-index a { display: flex; gap: 8px; font-size: 12px; line-height: 1.5; }
+.case-index a span { color: #777; font-size: 10px; }
+.case-index a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.case-section[id] { scroll-margin-top: 90px; }
+.case-actions { padding-left: 1.2em; max-width: 62ch; list-style: disc; font-size: clamp(1rem,1.28vw,1.25rem); line-height: 1.55; }
+.case-actions li + li { margin-top: 12px; }
+.home-v3 .site-header--frame .desktop-nav a.studio-button { border: 1px solid #ccc; padding: 0 14px; background: rgba(255,255,255,.7); }
+.product-case .case-hero h1 { letter-spacing: -.045em; }
+.product-case .case-hero__summary .eyebrow { font-size: 12px; letter-spacing: .08em; }
+.home-v3 .work-track::before { content: "SELECTED PRODUCT & UX CASE STUDIES / SCROLL TO EXPLORE"; }
+@media (max-width:620px) {
+ .home-v3 .hero-v2__note { top: 17vh; bottom: auto; right: 0; background: transparent; padding-top: 0; }
+}
