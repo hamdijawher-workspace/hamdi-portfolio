@@ -364,3 +364,7 @@ html:has(.premium-site), body.premium-site { background:#fff; color:#141619; }
  .premium-site .art-direction-link { font-size:11px; padding:0 10px; height:36px; }
 }
 @media(max-width:900px) { .premium-site .pin-spacer { height:auto!important; padding:0!important; min-height:0!important; } }
+@media(max-width:900px) {
+ .premium-site .site-header.site-header--unified > .art-direction-link { display:none; }
+ .premium-site .site-header.site-header--unified .header-actions { margin-left:auto; }
+}
