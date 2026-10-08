@@ -560,3 +560,10 @@ if (matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').match
   });
 }
 document.querySelector('.avatar-flip')?.addEventListener('click', event => event.currentTarget.classList.toggle('is-flipped'));
+
+// Rebuild scroll timelines when crossing the mobile/desktop layout boundary.
+// A fresh page prevents stale mobile GSAP transforms and trigger geometry.
+if (document.body.classList.contains('home-v3')) {
+  const desktopLayout = matchMedia('(min-width:901px)');
+  desktopLayout.addEventListener('change', () => location.reload());
+}

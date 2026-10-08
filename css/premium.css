@@ -368,3 +368,11 @@ html:has(.premium-site), body.premium-site { background:#fff; color:#141619; }
  .premium-site .site-header.site-header--unified > .art-direction-link { display:none; }
  .premium-site .site-header.site-header--unified .header-actions { margin-left:auto; }
 }
+@media(min-width:901px) {
+ .premium-site .clean-hero { height:76svh; min-height:610px; padding-bottom:50px; }
+ .premium-site .practice-grid { padding-top:65px; padding-bottom:65px; }
+ .premium-site .practice-grid__head { margin-bottom:45px; }
+ .premium-site .work-theatre__intro { padding-top:60px; padding-bottom:35px; }
+ .premium-site.home-v3 .work-track-wrap { height:320svh; }
+ .premium-site .contact-v2 { min-height:0; padding-top:65px; padding-bottom:65px; }
+}
