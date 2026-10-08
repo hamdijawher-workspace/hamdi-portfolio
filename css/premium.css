@@ -318,3 +318,8 @@ html:has(.premium-site), body.premium-site { background:#fff; color:#141619; }
 .project-card--smartwebpay { --card-tint-a:rgba(17,87,61,.69); --card-tint-b:rgba(5,42,35,.88); }
 .project-card--forvia { --card-tint-a:rgba(26,53,103,.69); --card-tint-b:rgba(12,23,56,.88); }
 .project-card--transitun { --card-tint-a:rgba(48,45,132,.69); --card-tint-b:rgba(23,18,66,.88); }
+
+/* Keep the primary links at the true page center. */
+@media(min-width:801px) {
+.premium-site .site-header.site-header--unified .desktop-nav { position:absolute; left:50%; transform:translateX(-50%); margin:0; }
+}
