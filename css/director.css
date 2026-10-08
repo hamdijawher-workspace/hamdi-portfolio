@@ -1840,3 +1840,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid #2655ed; outline-offs
 @media (max-width:620px) {
  .home-v3 .hero-v2__note { top: 17vh; bottom: auto; right: 0; background: transparent; padding-top: 0; }
 }
+
+/* Ooredoo concept: preserve screen legibility within the editorial case layout. */
+.ooredoo-cover { display:flex; align-items:flex-start; justify-content:center; gap:clamp(16px,3vw,48px); width:100%; height:100%; padding:clamp(24px,4vw,64px); background:#f2eeeb; overflow:hidden; }
+.work-panel__media .ooredoo-cover img, .work-tile__media .ooredoo-cover img { position:static; width:36%; height:auto; max-height:none; object-fit:contain; border-radius:18px; box-shadow:0 18px 48px #00000015; }
+.work-panel__media .ooredoo-cover img:nth-child(2), .work-tile__media .ooredoo-cover img:nth-child(2) { margin-top:8%; }
+.product-case .ooredoo-hero-screens { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,4vw,60px); align-items:start; max-height:760px; overflow:hidden; background:#f2eeeb; }
+.product-case .ooredoo-hero-screens img { max-height:none; width:100%; border-radius:20px; box-shadow:0 14px 40px #00000010; }
+.ooredoo-gallery { max-width:1080px; margin-left:auto; margin-right:auto; align-items:start; }
+.ooredoo-gallery figure { background:transparent; }
+.ooredoo-gallery button { width:100%; background:transparent; }
+.product-case .ooredoo-gallery img { width:100%; max-height:850px; object-fit:contain; border-radius:12px; }
+.ooredoo-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; list-style-position:inside; padding:0; margin-top:36px; }
+.ooredoo-flow li { border:1px solid #ffffff35; padding:20px; font-size:16px; }
+@media(max-width:700px) { .product-case .ooredoo-hero-screens { gap:12px; padding:16px; max-height:420px; } .product-case .ooredoo-hero-screens img { border-radius:8px; } .ooredoo-flow { grid-template-columns:1fr 1fr; } .ooredoo-flow li { padding:14px; font-size:14px; } .ooredoo-cover { padding:24px; gap:16px; } }

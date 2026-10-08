@@ -27,7 +27,7 @@
 
   if (loader) {
     const startedAt = performance.now();
-    const duration = reduced ? 50 : 1450;
+    const duration = reduced ? 50 : 1050;
     const countUp = (now) => {
       const progressValue = Math.min(1, (now - startedAt) / duration);
       const easedValue = 1 - Math.pow(1 - progressValue, 3);
@@ -284,6 +284,10 @@
   if (!reduced && window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+    const cleanHero = document.querySelector(".clean-hero");
+    if (cleanHero) {
+      gsap.fromTo(".avatar-flip", { y: 0 }, { y: -12, ease: "none", scrollTrigger: { trigger: cleanHero, start: "top top", end: "bottom top", scrub: .7 } });
+    }
     const narrativeHero = document.querySelector(".hero-v2");
     const legacyHero = document.querySelector(".hero");
     if (narrativeHero) {
@@ -324,9 +328,9 @@
     if (workTrack && workWrap && matchMedia("(min-width:901px)").matches) {
       if (body.classList.contains("home-v3")) {
         const panels = gsap.utils.toArray(".work-panel");
-        const xPositions = [-.30, -.10, .12, .31];
-        const yPositions = [.10, -.10, .12, -.08];
-        const rotations = [-1.6, 1.1, -.8, 1.3, -1.1];
+        const xPositions = [-.33, -.11, .11, .33];
+        const yPositions = [.07, -.07, .07, -.07];
+        const rotations = [-1.3, .9, -.9, 1.3];
 
         gsap.set(workTrack, { transformStyle: isSafari ? "flat" : "preserve-3d" });
         panels.forEach((panel, index) => {
@@ -441,7 +445,7 @@
       const practiceMarquee = practiceGrid.querySelector(".practice-marquee");
 
       gsap.set(".practice-grid__lines", { opacity: 0, scale: .985, transformOrigin: "50% 0%" });
-      gsap.set(practiceEyebrow, { x: -42, opacity: 0 });
+      gsap.set(practiceEyebrow, { opacity: 0 });
       gsap.set(practiceTitle, { y: 112, opacity: 0, clipPath: "inset(0 0 100% 0)" });
       gsap.set(practiceBody, { y: 54, opacity: 0 });
       practiceItems.forEach((item, index) => {
@@ -538,3 +542,21 @@
     }
   }
 })();
+
+// Tilt the card surface, leaving the scroll animation on its parent intact.
+if (matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
+  document.querySelectorAll('.project-card__surface').forEach(surface => {
+    surface.addEventListener('pointermove', event => {
+      const bounds = surface.parentElement.getBoundingClientRect();
+      const x = Math.max(-.5, Math.min(.5, (event.clientX - bounds.left) / bounds.width - .5));
+      const y = Math.max(-.5, Math.min(.5, (event.clientY - bounds.top) / bounds.height - .5));
+      surface.style.setProperty('--tilt-x', `${-y * 12}deg`);
+      surface.style.setProperty('--tilt-y', `${x * 12}deg`);
+    });
+    surface.addEventListener('pointerleave', () => {
+      surface.style.setProperty('--tilt-x', '0deg');
+      surface.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+}
+document.querySelector('.avatar-flip')?.addEventListener('click', event => event.currentTarget.classList.toggle('is-flipped'));
