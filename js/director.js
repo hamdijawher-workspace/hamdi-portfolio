@@ -71,7 +71,7 @@
     mobileMenu?.classList.toggle("is-open", open);
     body.classList.toggle("menu-open", open);
     menuButton?.setAttribute("aria-expanded", String(open));
-    menuButton?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menuButton?.setAttribute("aria-label", document.documentElement.lang === "fr" ? (open ? "Fermer le menu" : "Ouvrir le menu") : (open ? "Close menu" : "Open menu"));
     const menuText = menuButton?.querySelector(":scope > span:first-child");
     if (menuText) menuText.textContent = open ? "Close" : "Menu";
     if (open) {
@@ -328,9 +328,9 @@
     if (workTrack && workWrap && matchMedia("(min-width:901px)").matches) {
       if (body.classList.contains("home-v3")) {
         const panels = gsap.utils.toArray(".work-panel");
-        const xPositions = [-.33, -.11, .11, .33];
-        const yPositions = [.07, -.07, .07, -.07];
-        const rotations = [-1.3, .9, -.9, 1.3];
+        const xPositions = panels.map((_, i) => panels.length === 1 ? 0 : -.36 + i * .72 / (panels.length - 1));
+        const yPositions = panels.map((_, i) => i % 2 ? -.05 : .05);
+        const rotations = panels.map((_, i) => i % 2 ? .9 : -.9);
 
         gsap.set(workTrack, { transformStyle: isSafari ? "flat" : "preserve-3d" });
         panels.forEach((panel, index) => {
@@ -358,19 +358,19 @@
           }
         });
         panels.forEach((panel, index) => {
-          const revealAt = .03 + index * .19;
+          const revealAt = .03 + index * .6 / Math.max(1, panels.length - 1);
           depthTimeline.to(panel, { z: 0, scale: 1, opacity: 1, duration: .11, ease: "power2.out" }, revealAt);
           depthTimeline.to(panel, {
             x: () => innerWidth * xPositions[index],
             y: () => innerHeight * yPositions[index],
-            scale: .72,
+            scale: panels.length > 4 ? .64 : .72,
             rotationZ: rotations[index],
             opacity: 1,
             duration: .22,
             ease: "power2.inOut"
           }, revealAt + .08);
         });
-        depthTimeline.to(".work-archive-link", { opacity: 1, y: 0, duration: .12, ease: "none" }, .86);
+        depthTimeline.to(".work-archive-link", { opacity: 1, y: 0, duration: .12, ease: "none" }, .94);
       } else {
         const horizontalDistance = () => Math.max(0, workTrack.scrollWidth - innerWidth);
         gsap.to(workTrack, {
@@ -514,7 +514,7 @@
       gsap.from(".case-pagination__link", { y: 34, opacity: 0, stagger: .12, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".case-pagination", start: "top 82%" } });
 
       gsap.from(".portfolio-contact > .eyebrow", { y: 24, opacity: 0, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact", start: "top 80%" } });
-      gsap.from(".portfolio-contact > a > *", { yPercent: 48, opacity: 0, stagger: .1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact > a", start: "top 86%" } });
+      gsap.from(".portfolio-contact > a > *", { y: 16, opacity: 0, stagger: .1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact > a", start: "top 86%" } });
       gsap.from(".portfolio-contact .contact-v2__meta > p", { y: 22, opacity: 0, stagger: .1, duration: .75, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact .contact-v2__meta", start: "top 92%" } });
       gsap.from(".site-footer > div", { y: 14, opacity: 0, stagger: .08, duration: .7, ease: "power3.out", scrollTrigger: { trigger: ".site-footer", start: "top 96%" } });
     }
@@ -536,7 +536,7 @@
       gsap.from(".case-next .eyebrow", { x: -28, opacity: 0, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".case-next", start: "top 78%" } });
       gsap.from(".case-next h2", { yPercent: 32, opacity: 0, duration: 1.05, ease: "power3.out", scrollTrigger: { trigger: ".case-next", start: "top 76%" } });
       gsap.from(".portfolio-contact > .eyebrow", { y: 24, opacity: 0, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact", start: "top 80%" } });
-      gsap.from(".portfolio-contact > a > *", { yPercent: 48, opacity: 0, stagger: .1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact > a", start: "top 86%" } });
+      gsap.from(".portfolio-contact > a > *", { y: 16, opacity: 0, stagger: .1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact > a", start: "top 86%" } });
       gsap.from(".portfolio-contact .contact-v2__meta > p", { y: 22, opacity: 0, stagger: .1, duration: .75, ease: "power3.out", scrollTrigger: { trigger: ".portfolio-contact .contact-v2__meta", start: "top 92%" } });
       gsap.from(".site-footer > div", { y: 14, opacity: 0, stagger: .08, duration: .7, ease: "power3.out", scrollTrigger: { trigger: ".site-footer", start: "top 96%" } });
     }

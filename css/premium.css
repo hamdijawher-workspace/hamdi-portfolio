@@ -389,3 +389,12 @@ html:has(.premium-site), body.premium-site { background:#fff; color:#141619; }
   .premium-site .gallery--screens { grid-template-columns:1fr; max-width:420px; gap:28px; }
   .premium-site .gallery--screens img { height:580px; }
 }
+/* Hospitality case uses the portfolio shell and a warm photographic card. */
+.project-card--sabliere{--card-tint-a:rgba(81,68,47,.73);--card-tint-b:rgba(30,34,28,.91);--screen-bg:#f5f2ec}
+.sabliere-resource-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:28px}
+/* Keep the full desktop rhythm; use natural section heights in shorter viewports. */
+@media (min-width:901px) and (max-height:800px) {
+ .premium-site.home-v3:not(.reader-sized) .clean-hero { height:auto; min-height:0; padding-top:92px; padding-bottom:24px; }
+ .premium-site.home-v3 .practice-grid { min-height:0; padding-top:32px; padding-bottom:48px; }
+ .premium-site.home-v3 .work-theatre { padding-top:64px; }
+}
