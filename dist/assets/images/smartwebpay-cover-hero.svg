@@ -1,0 +1,129 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="206" y1="82" x2="1322" y2="824" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141216"/>
+      <stop offset="0.52" stop-color="#17161B"/>
+      <stop offset="1" stop-color="#0E1719"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 178) rotate(41.397) scale(525.516 429.373)">
+      <stop stop-color="#8B7A53" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#8B7A53" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1268 674) rotate(180) scale(444 312)">
+      <stop stop-color="#3F8D9E" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#3F8D9E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="phoneGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1B2027"/>
+      <stop offset="1" stop-color="#080B0E"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="330" y1="224" x2="701" y2="778" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFBF7"/>
+      <stop offset="1" stop-color="#EEE9D7"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <filter id="shadow" x="208" y="120" width="839" height="769" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feOffset dy="34"/>
+      <feGaussianBlur stdDeviation="34"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.03 0 0 0 0 0.05 0 0 0 0.42 0"/>
+      <feBlend in2="SourceGraphic" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="36" fill="url(#glowA)"/>
+  <rect width="1600" height="900" rx="36" fill="url(#glowB)"/>
+
+  <g opacity="0.52">
+    <path d="M111 168H1489" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M111 314H1489" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M111 460H1489" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M111 606H1489" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M111 752H1489" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M238 96V804" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M480 96V804" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M722 96V804" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M964 96V804" stroke="#3F3732" stroke-width="1.5"/>
+    <path d="M1206 96V804" stroke="#3F3732" stroke-width="1.5"/>
+  </g>
+
+  <g opacity="0.68">
+    <path d="M116 741L295 648" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+    <path d="M316 742L495 649" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+    <path d="M516 742L695 649" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+    <path d="M716 742L895 649" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+    <path d="M916 742L1095 649" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+    <path d="M1116 742L1295 649" stroke="#696058" stroke-width="24" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.35">
+    <path d="M198 719H1366" stroke="#DCCFA6" stroke-width="2" stroke-dasharray="12 14"/>
+    <path d="M198 619H1366" stroke="#DCCFA6" stroke-width="2" stroke-dasharray="12 14"/>
+  </g>
+
+  <g filter="url(#shadow)" transform="translate(0 6) rotate(-14 628 492)">
+    <rect x="300" y="172" width="655" height="638" rx="52" fill="url(#phoneGrad)"/>
+    <rect x="329" y="203" width="597" height="579" rx="38" fill="url(#screenGrad)"/>
+    <rect x="559" y="183" width="122" height="18" rx="9" fill="#080B0E"/>
+    <circle cx="629" cy="214" r="7" fill="#262A30"/>
+
+    <rect x="375" y="252" width="214" height="34" rx="17" fill="#0F1216" opacity="0.08"/>
+    <rect x="393" y="262" width="68" height="14" rx="7" fill="#111111" opacity="0.2"/>
+    <rect x="482" y="262" width="74" height="14" rx="7" fill="#111111" opacity="0.1"/>
+
+    <rect x="375" y="322" width="505" height="164" rx="26" fill="#F7F2E2"/>
+    <rect x="405" y="352" width="205" height="26" rx="13" fill="#151515"/>
+    <rect x="405" y="395" width="154" height="18" rx="9" fill="#4A4A4A" opacity="0.46"/>
+    <rect x="405" y="430" width="285" height="18" rx="9" fill="#4A4A4A" opacity="0.2"/>
+    <rect x="742" y="350" width="106" height="106" rx="53" fill="#D6FFC3"/>
+    <rect x="768" y="376" width="54" height="54" rx="27" fill="#8DF17E"/>
+    <path d="M794 391L812 401L804 422L784 422L776 401L794 391Z" fill="#19361E"/>
+
+    <rect x="375" y="517" width="505" height="198" rx="26" fill="#FFFCF2"/>
+    <rect x="405" y="546" width="205" height="28" rx="14" fill="#151515"/>
+    <rect x="405" y="591" width="164" height="18" rx="9" fill="#4A4A4A" opacity="0.46"/>
+    <rect x="405" y="626" width="300" height="18" rx="9" fill="#4A4A4A" opacity="0.2"/>
+    <rect x="725" y="544" width="125" height="125" rx="24" fill="#F6ECCA"/>
+    <rect x="742" y="561" width="91" height="91" rx="18" fill="#E7D89A"/>
+    <path d="M770 608H806" stroke="#403620" stroke-width="7" stroke-linecap="round"/>
+    <path d="M788 590V626" stroke="#403620" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(948 176)">
+    <rect width="478" height="244" rx="28" fill="#111419" stroke="#2A2C31" stroke-width="2"/>
+    <text x="36" y="52" fill="#F3F0E8" font-family="Open Sans, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3">LIVE PAYMENT STATUS</text>
+    <text x="36" y="87" fill="#8E8881" font-family="Open Sans, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="2">MOBILE-FIRST PARKING FLOW</text>
+    <rect x="36" y="126" width="406" height="18" rx="9" fill="#24292E"/>
+    <rect x="36" y="126" width="312" height="18" rx="9" fill="#E7D89A"/>
+    <circle cx="351" cy="135" r="16" fill="#8DF17E"/>
+    <text x="36" y="188" fill="#F3F0E8" font-family="Open Sans, Arial, sans-serif" font-size="44" font-weight="700">+27.3%</text>
+    <text x="196" y="188" fill="#8E8881" font-family="Open Sans, Arial, sans-serif" font-size="18">requested stronger UX</text>
+    <text x="36" y="220" fill="#8E8881" font-family="Open Sans, Arial, sans-serif" font-size="16">Users prioritized better usability, technical fixes, and clearer payment steps.</text>
+  </g>
+
+  <g transform="translate(1062 494)">
+    <rect width="290" height="198" rx="26" fill="#10161A" stroke="#253136" stroke-width="2"/>
+    <text x="30" y="44" fill="#F0EDE5" font-family="Open Sans, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">PARKING SIGNALS</text>
+    <path d="M34 145L84 118L129 129L177 89L224 100L256 72" stroke="#F8F3E2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="34" cy="145" r="6" fill="#F8F3E2"/>
+    <circle cx="84" cy="118" r="6" fill="#F8F3E2"/>
+    <circle cx="129" cy="129" r="6" fill="#F8F3E2"/>
+    <circle cx="177" cy="89" r="6" fill="#F8F3E2"/>
+    <circle cx="224" cy="100" r="6" fill="#F8F3E2"/>
+    <circle cx="256" cy="72" r="6" fill="#F8F3E2"/>
+    <rect x="30" y="64" width="110" height="18" rx="9" fill="#E7D89A"/>
+    <rect x="156" y="64" width="100" height="18" rx="9" fill="#28363B"/>
+  </g>
+
+  <g transform="translate(108 112)">
+    <text x="0" y="0" dominant-baseline="hanging" fill="#F4F1E9" font-family="Open Sans, Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="-2">SMART WEB PAY</text>
+    <text x="0" y="82" fill="#9A938B" font-family="Open Sans, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="2">PARKING PAYMENT UX · MOBILE-FIRST SERVICE FLOW</text>
+  </g>
+
+  <g transform="translate(108 782)">
+    <text x="0" y="0" fill="#A39A8F" font-family="Open Sans, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">RESEARCH-LED REDESIGN</text>
+    <text x="1258" y="0" text-anchor="end" fill="#A39A8F" font-family="Open Sans, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">PARKING · PAYMENTS · PRODUCT UX</text>
+  </g>
+</svg>

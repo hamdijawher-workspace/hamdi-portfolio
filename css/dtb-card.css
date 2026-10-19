@@ -1,0 +1,6 @@
+/* DTB listing card only. Existing project cards retain their original styling. */
+.project-card--dtb{--card-tint-a:rgba(27,34,24,.03);--card-tint-b:rgba(16,24,13,.8);--screen-bg:#fafaf8;background:#e8e9df}
+.premium-site .project-card--dtb .work-panel__media>img,.premium-site .project-card--dtb .work-tile__media>img{object-fit:cover;object-position:52% center;opacity:1;filter:none;transform:none}
+.premium-site .project-card--dtb .work-panel__info,.premium-site .project-card--dtb .work-tile__info{color:#fff;background:linear-gradient(transparent,rgba(16,24,13,.86));padding-top:80px}
+.premium-site .project-card--dtb .project-card__label{background:#c7f75a;color:#171b18;border-color:transparent}
+.premium-site .project-card--dtb .project-card__arrow{background:#c7f75a;color:#171b18}

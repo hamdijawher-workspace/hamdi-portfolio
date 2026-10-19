@@ -216,10 +216,11 @@
   const filterButtons = [...document.querySelectorAll("[data-filter]")];
   const applyWorkFilter = (value, updateUrl = false) => {
     const allowed = filterButtons.some((button) => button.dataset.filter === value) ? value : "all";
-    filterButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.filter === allowed));
+    filterButtons.forEach((button) => { button.classList.toggle("is-active", button.dataset.filter === allowed); button.setAttribute("aria-pressed", String(button.dataset.filter === allowed)); });
     document.querySelectorAll("[data-category]").forEach((card) => {
       card.hidden = allowed !== "all" && !card.dataset.category.split(" ").includes(allowed);
     });
+    window.ScrollTrigger?.refresh();
     if (updateUrl) {
       const url = new URL(window.location.href);
       if (allowed === "all") url.searchParams.delete("filter");
@@ -267,12 +268,16 @@
   });
 
   if (!reduced && !isSafari && window.Lenis) {
-    const lenis = new Lenis({ duration: 1.05, smoothWheel: true, wheelMultiplier: 0.9 });
+    const lenis = new Lenis({ duration: 1.05, smoothWheel: true, wheelMultiplier: 0.9, prevent: node => Boolean(node.closest(".lightbox, .mobile-menu, .preferences-panel")) });
     const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", (event) => {
-        const target = document.querySelector(link.getAttribute("href"));
+        const hash = link.getAttribute("href");
+        if (!hash || hash === "#") return;
+        let id;
+        try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+        const target = document.getElementById(id);
         if (!target) return;
         event.preventDefault();
         const destination = link.getAttribute("href") === "#opening" ? 0 : target;

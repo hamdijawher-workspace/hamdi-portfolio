@@ -1,0 +1,139 @@
+{
+  "user": "Yasmine Ben Ali",
+  "snapshot": "2026-10-18T09:41:00+01:00",
+  "currency": "TND",
+  "baseline": {
+    "everyday_millimes": 8420450,
+    "savings_millimes": 3200000,
+    "total_millimes": 11620450
+  },
+  "transfer": {
+    "recipient": "Mehdi Kchaou",
+    "amount_millimes": 250000,
+    "fee_millimes": 1000,
+    "total_millimes": 251000,
+    "available_after_millimes": 8169450,
+    "reference": "DTB-T-181026-0142",
+    "route": "Domestic bank transfer",
+    "estimate": "1 business day"
+  },
+  "bill": {
+    "biller": "STEG",
+    "bill_millimes": 128500,
+    "fee_millimes": 500,
+    "total_millimes": 129000,
+    "available_after_millimes": 8291450,
+    "reference": "DTB-B-181026-0188",
+    "customer_ref": "DEMO-48392017",
+    "due": "2026-10-22"
+  },
+  "categories": {
+    "Groceries": 352400,
+    "Cafés and dining": 146500,
+    "Transport": 210000,
+    "Bills": 218000,
+    "Digital services": 52000,
+    "Other": 300000
+  },
+  "transactions": [
+    [
+      "Café Carthage",
+      "18 Oct · Cafés and dining",
+      8500,
+      "Completed"
+    ],
+    [
+      "Marché Ariana",
+      "17 Oct · Groceries",
+      82400,
+      "Completed"
+    ],
+    [
+      "Maison Tunis",
+      "16 Oct · Other",
+      42000,
+      "Completed"
+    ],
+    [
+      "Mosaic Music",
+      "15 Oct · Digital services",
+      17900,
+      "Completed"
+    ],
+    [
+      "Nahla Cloud",
+      "15 Oct · Digital services",
+      9100,
+      "Completed"
+    ],
+    [
+      "CinemaPlus",
+      "15 Oct · Digital services",
+      25000,
+      "Completed"
+    ],
+    [
+      "Carburant Tunis",
+      "14 Oct · Transport",
+      110000,
+      "Completed"
+    ],
+    [
+      "Table du Lac",
+      "11 Oct · Cafés and dining",
+      138000,
+      "Completed"
+    ],
+    [
+      "Épicerie du Lac",
+      "08 Oct · Groceries",
+      270000,
+      "Completed"
+    ],
+    [
+      "Atelier Nabeul",
+      "07 Oct · Other",
+      258000,
+      "Completed"
+    ],
+    [
+      "Internet Jasmin",
+      "05 Oct · Bills",
+      85000,
+      "Completed"
+    ],
+    [
+      "SONEDE",
+      "04 Oct · Bills",
+      39000,
+      "Completed"
+    ],
+    [
+      "Metro Tunis",
+      "03 Oct · Transport",
+      100000,
+      "Completed"
+    ],
+    [
+      "STEG",
+      "01 Oct · Bills",
+      94000,
+      "Completed"
+    ]
+  ],
+  "subscriptions": [
+    [
+      "Mosaic Music",
+      17900
+    ],
+    [
+      "Nahla Cloud",
+      9100
+    ],
+    [
+      "CinemaPlus",
+      25000
+    ]
+  ],
+  "scenario_rules": "Each walkthrough begins from baseline S0. Transfer and bill branches are independent. Pending reserves funds; confirmed failure has no debit. Success receipts show settlement. All merchant events, fees, balances and timing are fictional."
+}

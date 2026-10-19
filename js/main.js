@@ -5,7 +5,7 @@ import { initNav } from "./nav.js";
 
 function enforceLightTheme() {
   document.documentElement.setAttribute("data-theme", "light");
-  window.localStorage.removeItem("hvmd-theme");
+  try { window.localStorage.removeItem("hvmd-theme"); } catch {}
 }
 
 function initAccordions() {

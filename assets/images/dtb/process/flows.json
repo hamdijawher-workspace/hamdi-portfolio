@@ -1,0 +1,132 @@
+[
+  {
+    "name": "A / First-time onboarding",
+    "ids": "UI-01 \u2192 UI-03 \u2192 UI-48 / UI-04",
+    "main": [
+      "Welcome / product introduction",
+      "Choose sign-in credentials",
+      "Identity check \u00b7 permission preview",
+      "Identity readable and approved?",
+      "Account setup and security options",
+      "Enter Home"
+    ],
+    "decision": 3,
+    "branch": [
+      "No / permission denied or unreadable",
+      "Explain issue \u00b7 save progress",
+      "Retake or choose support"
+    ],
+    "security": [
+      1,
+      2
+    ],
+    "note": "Approval is conceptual and depends on an authorized banking partner and identity process. Permission refusal must allow a safe return. Account entry is gated on verification."
+  },
+  {
+    "name": "B / Domestic transfer",
+    "ids": "UI-12 \u2192 UI-13 \u2192 UI-14 \u2192 UI-15 \u2192 UI-31 \u2192 UI-27 / UI-16 / UI-28",
+    "main": [
+      "Select or add recipient",
+      "Validate details and available funds",
+      "Review recipient, fee and total debit",
+      "Authorize / biometrics or PIN",
+      "Payment status confirmed?",
+      "Completed \u00b7 receipt and updated balance"
+    ],
+    "decision": 4,
+    "branch": [
+      "No / status still pending",
+      "Reserve funds \u00b7 no duplicate retry",
+      "Check same reference later"
+    ],
+    "security": [
+      3
+    ],
+    "note": "Invalid recipient \u2192 UI-39 \u2192 edit reference. Insufficient funds \u2192 UI-40 \u2192 reduce amount. Cancel before authorization \u2192 review. Confirmed failure \u2192 UI-28: no debit, review before retry. Expired session \u2192 UI-47 \u2192 sign in and refresh quote."
+  },
+  {
+    "name": "C / Bill payment",
+    "ids": "UI-17 \u2192 UI-35 \u2192 UI-18 \u2192 UI-36 \u2192 UI-37 \u2192 UI-38",
+    "main": [
+      "Choose saved biller",
+      "Enter customer reference",
+      "Bill retrieved successfully?",
+      "Review amount, fee and reference",
+      "Authorize with biometrics or PIN",
+      "Paid \u00b7 receipt and new availability"
+    ],
+    "decision": 2,
+    "branch": [
+      "No / bill lookup unavailable",
+      "Show no payment made",
+      "Edit reference or retry lookup"
+    ],
+    "security": [
+      4
+    ],
+    "note": "Lookup failure \u2192 UI-41. Unpaid bill is a retrieval result, not a payment authorization. Timeout after submission must resolve status by reference before another payment is offered."
+  },
+  {
+    "name": "D / Freeze and restore a card",
+    "ids": "UI-08 \u2192 UI-20 \u2192 UI-21 \u2192 UI-32 \u2192 UI-33 \u2192 UI-34",
+    "main": [
+      "Inspect unfamiliar transaction",
+      "Choose the linked card",
+      "Preview freeze impact",
+      "User confirms freeze?",
+      "Frozen \u00b7 explicit status",
+      "Preview and confirm restoration"
+    ],
+    "decision": 3,
+    "branch": [
+      "No / keep current state",
+      "Cancel confirmation",
+      "Return to card controls"
+    ],
+    "security": [
+      3,
+      5
+    ],
+    "note": "A freeze is reversible and does not replace a lost/stolen report. Existing authorizations may settle. If the issuer update fails, retain prior status, show failure and offer support; never show Frozen without confirmation."
+  },
+  {
+    "name": "E / Intelligent transaction search",
+    "ids": "UI-09 \u2192 UI-10 \u2192 UI-43 / UI-30 / UI-42",
+    "main": [
+      "Enter phrase in standard search",
+      "AI suggests date / category filters",
+      "Interpretation useful and available?",
+      "Display structured transaction rows",
+      "Open original payment and reference",
+      "Refine or clear the applied filters"
+    ],
+    "decision": 2,
+    "branch": [
+      "No / ambiguous or unavailable",
+      "Show editable merchant / date filters",
+      "Apply conventional search"
+    ],
+    "security": [],
+    "note": "AI-enabled steps: interpretation and optional matching explanation. No result \u2192 UI-42 \u2192 widen filters. Monetary totals come from matching source rows, never generated prose."
+  },
+  {
+    "name": "F / Budget and spending insights",
+    "ids": "UI-22 \u2192 UI-23 \u2192 UI-24",
+    "main": [
+      "Choose a period and account scope",
+      "Inspect settled spending categories",
+      "Category needs correction?",
+      "Review underlying transactions",
+      "Set or adjust a category budget",
+      "Save budget \u00b7 no money movement"
+    ],
+    "decision": 2,
+    "branch": [
+      "Yes / category mismatch",
+      "Choose a corrected category",
+      "Recalculate deterministic totals"
+    ],
+    "security": [],
+    "note": "No transactions \u2192 empty period state. Budget is a planning limit, not a card limit or automatic transfer. Savings balance is shown separately; insights exclude transfers and savings moves."
+  }
+]

@@ -357,7 +357,7 @@ body.theme-light .chapter-rail a.is-active { color: var(--ink); }
 .lightbox img { max-height:calc(100svh - 140px); max-width:calc(100vw - 140px); object-fit:contain; }
 .lightbox button { position:absolute; top:24px; right:28px; background:none; border:1px solid var(--paper); border-radius:7px; color:var(--paper); padding:10px 14px; cursor:pointer; text-transform:uppercase; letter-spacing:.08em; font-size:10px; }
 
-[data-reveal] { opacity:0; transform:translateY(38px); }
+.is-ready [data-reveal] { opacity:0; transform:translateY(38px); }
 .is-ready [data-reveal].is-visible { opacity:1; transform:none; transition:opacity 850ms var(--ease),transform 850ms var(--ease); }
 
 @media (max-width: 900px) {
@@ -1854,3 +1854,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid #2655ed; outline-offs
 .ooredoo-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; list-style-position:inside; padding:0; margin-top:36px; }
 .ooredoo-flow li { border:1px solid #ffffff35; padding:20px; font-size:16px; }
 @media(max-width:700px) { .product-case .ooredoo-hero-screens { gap:12px; padding:16px; max-height:420px; } .product-case .ooredoo-hero-screens img { border-radius:8px; } .ooredoo-flow { grid-template-columns:1fr 1fr; } .ooredoo-flow li { padding:14px; font-size:14px; } .ooredoo-cover { padding:24px; gap:16px; } }
+
+/* Keep content readable when enhancement scripts are unavailable. */
+body:not(.is-ready) .loader { display: none; }

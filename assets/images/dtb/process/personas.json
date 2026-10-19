@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Yasmine Ben Ali",
+    "segment": "A / The everyday organizer",
+    "context": "Salaried professional in Ariana. Checks money between work and home responsibilities. Medium digital familiarity. Age is not used as a proxy for ability.",
+    "job": "When a bill is coming up, help me see what is available and what will leave my account, so I can decide calmly.",
+    "goals": "Know available funds; pay essentials; retain receipts.",
+    "friction": "A total balance can be mistaken for spendable cash. A vague payment status invites duplicate attempts.",
+    "trust": "Needs a fee-inclusive total and a recognizable recipient.",
+    "access": "Readable numerals; one clear primary action; meaningful status labels.",
+    "channels": "Mobile for routine tasks; human support for disputed payments.",
+    "ai": "Optional reminders and explanations; no autonomous payments.",
+    "scenario": "Checks Everyday, spots the STEG bill, reviews the reference and pays.",
+    "implication": "Balance anchor, explicit total debit, visible receipt and due date."
+  },
+  {
+    "name": "Nader Mansour",
+    "segment": "B / The independent professional",
+    "context": "Self-employed photographer in Tunis with irregular domestic income. Uses records to reconcile project expenses. High task familiarity, variable time available.",
+    "job": "When a client asks about a payment, help me retrieve the exact record and status, so I can reconcile my work.",
+    "goals": "Find transactions; export statements; separate savings from cash flow.",
+    "friction": "Vague search matches and inconsistent merchant names make records hard to find.",
+    "trust": "Needs original transaction evidence and a clear scope for summaries.",
+    "access": "Search filters that are visible and editable; scalable dense lists.",
+    "channels": "Mobile retrieval and downloadable records; support for exceptions.",
+    "ai": "Translate a natural phrase into editable filters. No tax or financial advice.",
+    "scenario": "Searches for recurring services, checks the matching list and saves a receipt.",
+    "implication": "Structured search, source-linked summaries and manual fallback."
+  },
+  {
+    "name": "Amel Trabelsi",
+    "segment": "C / The deliberate decision-maker",
+    "context": "Household coordinator in Sousse. Familiar with common mobile tasks, cautious when money or device access is at risk. Digital confidence is situational.",
+    "job": "When I see an unfamiliar card payment, help me secure the card and understand the next step, so I can regain control.",
+    "goals": "Prevent new card use; understand what freezing changes; reach a person.",
+    "friction": "Ambiguous toggles and unclear recovery leave uncertainty about protection.",
+    "trust": "Needs explicit impact, confirmation and reversible status.",
+    "access": "Plain-language errors; generous targets; no color-only meaning.",
+    "channels": "Mobile controls first; human support for suspected fraud.",
+    "ai": "May suggest the right control; must not silently change security.",
+    "scenario": "Reviews Maison Tunis, freezes the card, then reports an issue if needed.",
+    "implication": "Preview impact, confirm, show frozen status, offer restoration and support."
+  }
+]

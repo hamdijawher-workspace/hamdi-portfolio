@@ -1,0 +1,306 @@
+[
+  {
+    "title": "01 / Understand everyday money",
+    "persona": "Yasmine \u00b7 Provisional scenario",
+    "goal": "Check available cash and recognize the next bill.",
+    "trigger": "A few minutes before leaving for work.",
+    "stages": [
+      "Open",
+      "Orient",
+      "Inspect",
+      "Notice bill",
+      "Decide"
+    ],
+    "actions": [
+      "Sign in securely",
+      "Read Everyday availability",
+      "Open recent activity",
+      "Read STEG reminder",
+      "Open bill review"
+    ],
+    "questions": [
+      "Is this my account?",
+      "What can I spend?",
+      "Is this payment mine?",
+      "How much is due?",
+      "Should I pay now?"
+    ],
+    "emotions": [
+      "Neutral",
+      "Seeking certainty",
+      "Attentive",
+      "Slight concern",
+      "In control"
+    ],
+    "pain": [
+      "Repeated authentication",
+      "Confusing total and available",
+      "Unclear merchant name",
+      "Reminder without a due date",
+      "Hidden fee at payment"
+    ],
+    "touch": [
+      "UI-02",
+      "UI-04 / UI-05",
+      "UI-07 / UI-08",
+      "UI-26",
+      "UI-18 / UI-36"
+    ],
+    "opportunity": [
+      "Optional biometrics",
+      "Separate available funds",
+      "Show dates and references",
+      "Show amount and due date",
+      "Total debit before approval"
+    ],
+    "ai": [
+      "Not needed",
+      "No generated balance",
+      "Merchant lookup only",
+      "Optional reminder",
+      "Concise explanation"
+    ],
+    "success": [
+      "Secure entry",
+      "Correct account identified",
+      "Correct transaction opened",
+      "Due date understood",
+      "Review reached without payment"
+    ],
+    "curve": [
+      0,
+      1,
+      0,
+      -1,
+      2
+    ]
+  },
+  {
+    "title": "02 / Send a domestic transfer",
+    "persona": "Yasmine \u00b7 Provisional scenario",
+    "goal": "Send the correct amount to a new recipient and keep a receipt.",
+    "trigger": "Mehdi shares his domestic bank details.",
+    "stages": [
+      "Identify",
+      "Prepare",
+      "Review",
+      "Authorize",
+      "Track"
+    ],
+    "actions": [
+      "Add and validate recipient",
+      "Enter amount and source",
+      "Check fee and total debit",
+      "Choose biometrics or PIN",
+      "Read status and receipt"
+    ],
+    "questions": [
+      "Is the account correct?",
+      "Can I afford this?",
+      "What leaves my account?",
+      "Am I ready to send?",
+      "Has the transfer completed?"
+    ],
+    "emotions": [
+      "Cautious",
+      "Focused",
+      "Deliberate",
+      "Committed",
+      "Relieved if confirmed"
+    ],
+    "pain": [
+      "Incomplete reference",
+      "Insufficient balance",
+      "Separated cost information",
+      "Unclear authorization boundary",
+      "Mistaking pending for failure"
+    ],
+    "touch": [
+      "UI-13 / UI-39",
+      "UI-14 / UI-40",
+      "UI-15",
+      "UI-31",
+      "UI-27 / UI-16 / UI-28"
+    ],
+    "opportunity": [
+      "Inline correction",
+      "Include fee in balance check",
+      "One summary scan path",
+      "Explicit security checkpoint",
+      "No retry during pending"
+    ],
+    "ai": [
+      "Format help only",
+      "Explain domestic route",
+      "Explain sourced quote",
+      "No AI authorization",
+      "No invented status"
+    ],
+    "success": [
+      "Recipient validated",
+      "Affordable amount",
+      "Total debit understood",
+      "Explicit consent",
+      "Status correctly interpreted"
+    ],
+    "curve": [
+      -1,
+      0,
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "title": "03 / Secure an unfamiliar card payment",
+    "persona": "Amel \u00b7 Provisional scenario using shared fictional account",
+    "goal": "Stop new use, understand freeze limits and retain a recovery path.",
+    "trigger": "Maison Tunis is not recognized.",
+    "stages": [
+      "Notice",
+      "Investigate",
+      "Choose",
+      "Confirm",
+      "Recover"
+    ],
+    "actions": [
+      "Open activity",
+      "Inspect merchant and receipt",
+      "Open card controls",
+      "Preview and confirm freeze",
+      "Restore or contact support"
+    ],
+    "questions": [
+      "Was this me?",
+      "Which card was used?",
+      "Does freeze stop everything?",
+      "Is the card frozen now?",
+      "What should I do next?"
+    ],
+    "emotions": [
+      "Concern",
+      "Uncertainty",
+      "Seeking control",
+      "Reassured",
+      "Cautiously confident"
+    ],
+    "pain": [
+      "Unfamiliar descriptor",
+      "Missing card identification",
+      "Overstated protection",
+      "Toggle without confirmation",
+      "No human escalation"
+    ],
+    "touch": [
+      "UI-07",
+      "UI-08",
+      "UI-20",
+      "UI-21 / UI-32",
+      "UI-33 / UI-34"
+    ],
+    "opportunity": [
+      "Reference and date",
+      "Show masked card",
+      "Explain prior authorizations",
+      "Explicit Frozen label",
+      "Restore and support paths"
+    ],
+    "ai": [
+      "Optional shortcut",
+      "Explain known fields",
+      "Navigate to control",
+      "Never perform silent change",
+      "Offer support entry"
+    ],
+    "success": [
+      "Correct transaction found",
+      "Correct card selected",
+      "Freeze impact understood",
+      "Frozen status recognized",
+      "Appropriate next step chosen"
+    ],
+    "curve": [
+      -2,
+      -2,
+      -1,
+      1,
+      1
+    ]
+  },
+  {
+    "title": "04 / Find recurring services",
+    "persona": "Nader \u00b7 Provisional scenario",
+    "goal": "Retrieve exact subscription payments without knowing the category structure.",
+    "trigger": "Reviewing this month\u2019s recurring expenses.",
+    "stages": [
+      "Express intent",
+      "Interpret",
+      "Inspect",
+      "Verify",
+      "Fallback"
+    ],
+    "actions": [
+      "Enter a natural phrase",
+      "Read the applied filters",
+      "Open three matching rows",
+      "Inspect original payment",
+      "Use conventional filters if needed"
+    ],
+    "questions": [
+      "Can I ask naturally?",
+      "What did it understand?",
+      "Are these all my payments?",
+      "Where did the total come from?",
+      "Can I continue without AI?"
+    ],
+    "emotions": [
+      "Curious",
+      "Skeptical",
+      "Focused",
+      "More confident",
+      "Independent"
+    ],
+    "pain": [
+      "Unknown navigation label",
+      "Hidden interpretation",
+      "Overbroad or missed matches",
+      "Untraceable summary",
+      "Dependency on unavailable AI"
+    ],
+    "touch": [
+      "UI-09",
+      "UI-10",
+      "UI-10",
+      "UI-43",
+      "UI-30 / UI-42"
+    ],
+    "opportunity": [
+      "Familiar search entry",
+      "Editable scope",
+      "List with dates and amounts",
+      "Source-level detail",
+      "Standard merchant/date filters"
+    ],
+    "ai": [
+      "Intent parsing",
+      "Category/date suggestions",
+      "No invented transactions",
+      "Explain matched records",
+      "Graceful unavailability"
+    ],
+    "success": [
+      "Intent entered",
+      "Scope understood",
+      "Relevant records found",
+      "Total traceable",
+      "Task recoverable manually"
+    ],
+    "curve": [
+      0,
+      -1,
+      0,
+      2,
+      1
+    ]
+  }
+]
