@@ -269,6 +269,7 @@
 
   if (!reduced && !isSafari && window.Lenis) {
     const lenis = new Lenis({ duration: 1.05, smoothWheel: true, wheelMultiplier: 0.9, prevent: node => Boolean(node.closest(".lightbox, .mobile-menu, .preferences-panel")) });
+    window.addEventListener('portfolio:back-to-top', event => { event.preventDefault(); lenis.scrollTo(0, { duration: .8 }); });
     const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
     document.querySelectorAll('a[href^="#"]').forEach((link) => {

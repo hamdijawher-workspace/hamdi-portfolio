@@ -13,3 +13,7 @@
 .premium-site .project-card--altair .work-panel__info,.premium-site .project-card--altair .work-tile__info{color:#f3f8fc;background:linear-gradient(transparent,#071522ed);padding-top:65px}
 .premium-site .project-card--altair .work-panel__info span,.premium-site .project-card--altair .work-tile__info span{color:#d3e2ed}
 .premium-site .project-card--altair .project-card__label{background:#0a1b2ed4;color:#e3f1fa}
+
+/* The whole annotated composition fits inside the square project card. */
+.premium-site .project-card--altair::after{background:linear-gradient(transparent 65%,#071522e8 100%)}
+.premium-site .project-card--altair .work-panel__media>img,.premium-site .project-card--altair .work-tile__media>img{object-fit:contain;background:#f4f6f7}
