@@ -1,0 +1,15 @@
+/* A dedicated editorial project cover; the cockpit itself lives inside the case study. */
+.project-card--altair{background:radial-gradient(ellipse at 50% 42%,#fff,#e8eef3 70%);--card-tint-a:transparent;--card-tint-b:transparent}
+.premium-site .project-card--altair .work-panel__media,.premium-site .project-card--altair .work-tile__media{background:radial-gradient(ellipse at 50% 65%,#d7e0e966,transparent 50%);isolation:isolate}
+.premium-site .project-card--altair .work-panel__media:before,.premium-site .project-card--altair .work-tile__media:before{content:'MEAVEN';position:absolute;left:0;right:0;top:15%;text-align:center;font-size:clamp(50px,9vw,160px);letter-spacing:.15em;color:#cbd5de;line-height:1;font-weight:400;z-index:-1}
+.premium-site .project-card--altair .work-panel__media>img,.premium-site .project-card--altair .work-tile__media>img{object-fit:contain;object-position:center;opacity:1;filter:drop-shadow(0 25px 15px #2c465d12);transform:none;width:83%;height:62%;position:absolute;top:19%;left:9%;right:auto}
+.premium-site .project-card--altair .work-panel__info,.premium-site .project-card--altair .work-tile__info{color:#2b3c49;background:linear-gradient(transparent,#e9eff5e8);padding-top:65px}
+.premium-site .project-card--altair .work-panel__info span,.premium-site .project-card--altair .work-tile__info span{color:#708599}
+.premium-site .project-card--altair .project-card__label{background:#ffffffc7;color:#50697e;border-color:transparent}
+.premium-site .project-card--altair .project-card__arrow{background:#7394b6;color:#fff}
+/* Match the project cover to the approved interior presentation. */
+.premium-site .project-card--altair .work-panel__media:before,.premium-site .project-card--altair .work-tile__media:before{content:none}
+.premium-site .project-card--altair .work-panel__media>img,.premium-site .project-card--altair .work-tile__media>img{object-fit:cover;object-position:center;width:100%;height:100%;top:0;left:0;border-radius:0;filter:none}
+.premium-site .project-card--altair .work-panel__info,.premium-site .project-card--altair .work-tile__info{color:#f3f8fc;background:linear-gradient(transparent,#071522ed);padding-top:65px}
+.premium-site .project-card--altair .work-panel__info span,.premium-site .project-card--altair .work-tile__info span{color:#d3e2ed}
+.premium-site .project-card--altair .project-card__label{background:#0a1b2ed4;color:#e3f1fa}
