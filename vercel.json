@@ -8,6 +8,31 @@
       "source": "/work/transitun.html",
       "destination": "/work/dtb.html",
       "permanent": true
+    },
+    {
+      "source": "/work/altair.html",
+      "destination": "/work/meaven",
+      "permanent": true
+    },
+    {
+      "source": "/work/altair-prototype/index.html",
+      "destination": "/work/meaven/prototype",
+      "permanent": true
+    },
+    {
+      "source": "/work/altair-prototype",
+      "destination": "/work/meaven/prototype",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/work/meaven",
+      "destination": "/work/altair.html"
+    },
+    {
+      "source": "/work/meaven/prototype",
+      "destination": "/work/altair-prototype/index.html"
     }
   ]
 }
